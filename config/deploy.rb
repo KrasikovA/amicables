@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:KrasikovA/amicables.git'
 
 # Default deploy_to directory is /var/www/my_app_name
   set :deploy_to, '/home/deployer/apps/amicables'
-  server '192.168.1.70'
+  server '192.168.1.70', user: 'deployer'
 
 # Default value for :scm is :git
 # set :scm, :git
