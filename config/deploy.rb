@@ -7,8 +7,9 @@ set :repo_url, 'git@github.com:KrasikovA/amicables.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-  set :deploy_to, '/home/deployer/apps/amicables'
-  server '192.168.1.70', user: 'deployer'
+set :deploy_to, '/home/deployer/apps/amicables'
+server '192.168.1.70', user: 'deployer'
+set :keep_releases, 2
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -32,17 +33,14 @@ set :repo_url, 'git@github.com:KrasikovA/amicables.git'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+# 
 
 namespace :deploy do
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
+  run 'kill cat /home/deployer/apps/amicables/run/unicorn.pid'
+  within release_path do
+    execute :bundle, "--without development test"
+    execute :rake, 'db:migrate'
+    run 'unicorn -c config/unicorn.rb -e production -D'
   end
 
 end
