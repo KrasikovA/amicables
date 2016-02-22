@@ -33,14 +33,20 @@ set :keep_releases, 2
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# 
+
 
 namespace :deploy do
-  run 'kill cat /home/deployer/apps/amicables/run/unicorn.pid'
-  within release_path do
-    execute :bundle, "--without development test"
-    execute :rake, 'db:migrate'
-    run 'unicorn -c config/unicorn.rb -e production -D'
+  task :reboot do
+    on roles(:all) do
+      #unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
+      #execute :kill, "#{unicorn_pid}"
+      within release_path do
+        
+        execute "bin/bundle install --without development test"
+        execute 'bin/rake db:migrate'
+        execute 'bin/bundle exec unicorn -c config/unicorn.rb -e production -D'
+      end
+    end
   end
-
+  after "deploy:finished", "deploy:reboot"
 end
