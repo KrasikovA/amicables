@@ -51,6 +51,9 @@ GEM
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     concurrent-ruby (1.0.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
@@ -154,6 +157,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capistrano-rails
+  capistrano-rvm
   jbuilder (~> 2.0)
   pg
   rails (= 4.2.5)

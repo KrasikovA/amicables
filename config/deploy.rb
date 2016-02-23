@@ -10,6 +10,11 @@ set :repo_url, 'git@github.com:KrasikovA/amicables.git'
 set :deploy_to, '/home/deployer/apps/amicables'
 server '192.168.1.70', user: 'deployer'
 set :keep_releases, 2
+set :rvm_type, :user   
+set :rvm_ruby_version, '2.2.3'
+set :default_env, {
+  'SECRET_KEY_BASE' => SecureRandom.hex(64)
+}
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -38,13 +43,10 @@ set :keep_releases, 2
 namespace :deploy do
   task :reboot do
     on roles(:all) do
-      #unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
-      #execute :kill, "#{unicorn_pid}"
+      unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
+      execute :kill, "#{unicorn_pid}"
       within release_path do
-        
-        execute "bin/bundle install --without development test"
-        execute 'bin/rake db:migrate'
-        execute 'bin/bundle exec unicorn -c config/unicorn.rb -e production -D'
+        execute :bundle,"exec unicorn -c config/unicorn.rb -E production -D"
       end
     end
   end
