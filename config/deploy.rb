@@ -46,6 +46,7 @@ namespace :deploy do
       execute :kill, "#{unicorn_pid}"
       within release_path do
         execute :bundle,"install --without development test"
+        execute :rake, "assets:cleanup"
         execute :bundle,"exec unicorn -c config/unicorn.rb -E production -D"
       end
     end
