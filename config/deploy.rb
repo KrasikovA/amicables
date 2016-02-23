@@ -15,7 +15,6 @@ set :rvm_ruby_version, '2.2.3'
 set :default_env, {
   'SECRET_KEY_BASE' => SecureRandom.hex(64)
 }
-
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -46,6 +45,7 @@ namespace :deploy do
       unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
       execute :kill, "#{unicorn_pid}"
       within release_path do
+        execute :bundle,"install --without development test"
         execute :bundle,"exec unicorn -c config/unicorn.rb -E production -D"
       end
     end
