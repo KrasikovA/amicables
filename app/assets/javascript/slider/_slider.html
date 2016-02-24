@@ -1,0 +1,12 @@
+<div role="slidepanel">
+  <ul class="nav nav-tabs" role="slidelist">
+    <li role="presentation"
+      ng-repeat="slide in slider.slides">
+      <a href=""
+        role="slide"
+        ng-click="slider.select(slide)">{{slide.heading}}</a>
+    </li>
+  </ul>
+  <ng-transclude>
+  </ng-transclude>
+</div>

@@ -18,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
   gem 'unicorn'
   gem 'pg', group: :production
+  gem 'angular-rails-templates'
 
 # Use Capistrano for deployment
   

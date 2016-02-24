@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<p>We are watching...</p>
-
+	<div ng-app="app">
+		<slider>
+			<slide heading="about">about</slide>
+			<slide heading="bands">bands</slide>
+			<slide heading="releases">releases</slide>
+		</slider>
+	</div>
 </body>
 </html>
