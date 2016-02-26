@@ -11,6 +11,7 @@ angular.module('app')
     link: function(scope, elem, attr,sliderCtrl) {
     	scope.active = false;
         scope.slideRight = false;
+        scope.slideLeft = false;
     	sliderCtrl.addSlide(scope);
     }
   }
@@ -36,11 +37,15 @@ angular.module('app')
             slideIndex = self.slides.indexOf(slide);
             if (slide.slideRight){
                 for (var i = slideIndex;i > -1;i-- ){
+                    if(self.slides[i].slideRight){
+                        self.slides[i].slideLeft = true;
+                    }
                     self.slides[i].slideRight = false;
                 }
             }else{
                 for (var i = slideIndex;i < self.slides.length;i++ ){
                     self.slides[i].slideRight = true;
+                    self.slides[i].slideLeft = false;
                 }
             }
         }

@@ -2,7 +2,7 @@
   <div role="presentation"
     ng-repeat="slide in slider.slides"
     ng-click="slider.selectSlide(slide)"
-    ng-class="{slideRight: slide.slideRight}"
+    ng-class="{slideRight: slide.slideRight,slideLeft: slide.slideLeft}"
     class="column">
       <p ng-repeat="letter in slide.heading track by $index">{{letter}}</p>
   </div>

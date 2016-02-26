@@ -46,7 +46,7 @@ namespace :deploy do
       execute :kill, "#{unicorn_pid}"
       within release_path do
         execute :bundle,"install --without development test"
-        execute :rake, "assets:precompile"
+        execute :rake, "assets:precompile RAILS_ENV=production"
         execute :rake, "db:migrate RAILS_ENV='production' "
         execute :bundle,"exec unicorn -c config/unicorn.rb -E production -D"
       end
