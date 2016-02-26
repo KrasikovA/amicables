@@ -9,8 +9,9 @@ angular.module('app')
     	heading: '@'
     },
     link: function(scope, elem, attr,sliderCtrl) {
-    	scope.active = false
-    	sliderCtrl.addSlide(scope)
+    	scope.active = false;
+        scope.slideRight = false;
+    	sliderCtrl.addSlide(scope);
     }
   }
 })
@@ -23,11 +24,26 @@ angular.module('app')
     bindToController: true,
     controllerAs: 'slider',
     controller: function() {
-    	var self = this
-    	self.slides = []
+    	var self = this;
+    	self.slides = [];
+        self.selectedSlide = null;
+
     	self.addSlide = function addSlide(slide) {
 		  self.slides.push(slide)
-		}
+		};
+
+        self.selectSlide = function(slide){
+            slideIndex = self.slides.indexOf(slide);
+            if (slide.slideRight){
+                for (var i = slideIndex;i > -1;i-- ){
+                    self.slides[i].slideRight = false;
+                }
+            }else{
+                for (var i = slideIndex;i < self.slides.length;i++ ){
+                    self.slides[i].slideRight = true;
+                }
+            }
+        }
     }
   }
 })

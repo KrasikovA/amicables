@@ -42,8 +42,8 @@ set :default_env, {
 namespace :deploy do
   task :reboot do
     on roles(:all) do
-      #unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
-      #execute :kill, "#{unicorn_pid}"
+      unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
+      execute :kill, "#{unicorn_pid}"
       within release_path do
         execute :bundle,"install --without development test"
         execute :rake, "assets:precompile"

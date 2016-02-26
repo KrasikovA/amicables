@@ -1,12 +1,11 @@
-<div role="slidepanel">
-  <ul class="nav nav-tabs" role="slidelist">
-    <li role="presentation"
-      ng-repeat="slide in slider.slides">
-      <a href=""
-        role="slide"
-        ng-click="slider.select(slide)">{{slide.heading}}</a>
-    </li>
-  </ul>
+<div role="slidepanel" class="slider">
+  <div role="presentation"
+    ng-repeat="slide in slider.slides"
+    ng-click="slider.selectSlide(slide)"
+    ng-class="{slideRight: slide.slideRight}"
+    class="column">
+      <p ng-repeat="letter in slide.heading track by $index">{{letter}}</p>
+  </div>
   <ng-transclude>
   </ng-transclude>
 </div>

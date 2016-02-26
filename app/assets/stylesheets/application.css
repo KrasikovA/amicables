@@ -12,6 +12,4 @@
  *
  *= require_tree .
  *= require_self
- *= require stylesheets/skeleton.css
- *= require stylesheets/normalize.css
  */

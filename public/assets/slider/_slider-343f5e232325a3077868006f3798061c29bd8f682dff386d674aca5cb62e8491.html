@@ -1,0 +1,10 @@
+<div role="slidepanel" class="slider">
+  <ul class="nav nav-tabs" role="slidelist">
+    <li role="presentation"
+      ng-repeat="slide in slider.slides">
+        <p ng-repeat="letter in slide.heading track by $index">{{letter}}</p>
+    </li>
+  </ul>
+  <ng-transclude>
+  </ng-transclude>
+</div>

@@ -1,0 +1,25 @@
+@font-face {
+	font-family: 'BPtypewrite';
+	src: url('BPtypewrite.otf');
+};
+@font-face {
+  	font-family: 'ProximaNova';
+  	src: url('ProximaNova-Reg.otf');
+}
+body, html{
+	padding: 0;
+	margin: 0;
+}
+*{
+	font-family: "BPtypewrite"
+}
+
+.userPage{
+	.mainBack{
+		bottom: 0;
+		position: absolute;
+		z-index: -1;
+		min-height: 100vh;
+		min-width: 100%;
+	}
+}
