@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'BPtypewrite';
-	src: url('<%= asset_path(fonts/BPtypewrite.otf) %>');
+	src: url("<%= asset_path('fonts/BPtypewrite.otf') %>");
 
 };
 @font-face {
