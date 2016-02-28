@@ -16,11 +16,14 @@ body, html{
 }
 
 .userPage{
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
 	.mainBack{
 		bottom: 0;
 		position: absolute;
 		z-index: -1;
-		min-height: 100vh;
+		min-height: 100%;
 		min-width: 100%;
 	}
 }

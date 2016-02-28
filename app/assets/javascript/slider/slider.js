@@ -6,7 +6,8 @@ angular.module('app')
     templateUrl: 'slider/_slide.html',
     require: '^slider',
     scope: {
-    	heading: '@'
+    	heading: '@',
+        page: '@'
     },
     link: function(scope, elem, attr,sliderCtrl) {
     	scope.active = false;
@@ -16,7 +17,7 @@ angular.module('app')
     }
   }
 })
-.directive('slider', function() {
+.directive('slider', function(leaf,$location,slides) {
   return {
     restrict: 'E',
     transclude: true,
@@ -26,29 +27,45 @@ angular.module('app')
     controllerAs: 'slider',
     controller: function() {
     	var self = this;
-    	self.slides = [];
         self.selectedSlide = null;
-
+        self.slides = slides.slidesList;
     	self.addSlide = function addSlide(slide) {
-		  self.slides.push(slide)
+		  slides.slidesList.push(slide)
 		};
 
         self.selectSlide = function(slide){
-            slideIndex = self.slides.indexOf(slide);
             if (slide.slideRight){
-                for (var i = slideIndex;i > -1;i-- ){
-                    if(self.slides[i].slideRight){
-                        self.slides[i].slideLeft = true;
-                    }
-                    self.slides[i].slideRight = false;
-                }
+                leaf.prev(slide,slides.slidesList)
             }else{
-                for (var i = slideIndex;i < self.slides.length;i++ ){
-                    self.slides[i].slideRight = true;
-                    self.slides[i].slideLeft = false;
-                }
+                leaf.next(slide,slides.slidesList)
             }
+            $location.url(slide.page)
         }
     }
   }
+})
+.service('leaf',function(){
+    var self = this;
+    self.prev = function(slide,slides){
+                slideIndex = slides.indexOf(slide);
+                for (var i = slideIndex;i > -1;i-- ){
+                    if(slides[i].slideRight){
+                        slides[i].slideLeft = true;
+                    }
+                    slides[i].slideRight = false;
+                }
+                if (slideIndex + 1 < slides.length){
+                    slides[slideIndex + 1].active = true;
+                }
+            };
+    self.next = function(slide,slides){
+                slideIndex = slides.indexOf(slide);
+                for (var i = slideIndex;i < slides.length;i++ ){
+                    slides[i].slideRight = true;
+                    slides[i].slideLeft = false;
+                }
+                if (slideIndex + 1 < slides.length){
+                    slides[slideIndex + 1].active = false;
+                }
+            };
 })

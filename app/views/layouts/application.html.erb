@@ -9,12 +9,12 @@
 </head>
 <body>
 	<div ng-app="app" class="userPage">
-		<%= image_tag 'mainBack.png',class: "mainBack" %>
 		<slider>
-			<slide heading="about">about</slide>
-			<slide heading="bands">bands</slide>
-			<slide heading="releases">releases</slide>
+			<slide heading="about" page="about"></slide>
+			<slide heading="bands" page="bands"></slide>
+			<slide heading="releases" page="releases"></slide>
 		</slider>
+		<ui-view></ui-view>
 	</div>
 </body>
 </html>
