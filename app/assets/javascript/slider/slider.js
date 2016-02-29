@@ -3,7 +3,6 @@ angular.module('app')
 	return {
     restrict: 'E',
     transclude: true,
-    templateUrl: 'slider/_slide.html',
     require: '^slider',
     scope: {
     	heading: '@',
@@ -17,7 +16,7 @@ angular.module('app')
     }
   }
 })
-.directive('slider', function(leaf,$location,slides) {
+.directive('slider', function(leaf,slides) {
   return {
     restrict: 'E',
     transclude: true,
@@ -39,33 +38,7 @@ angular.module('app')
             }else{
                 leaf.next(slide,slides.slidesList)
             }
-            $location.url(slide.page)
         }
     }
   }
-})
-.service('leaf',function(){
-    var self = this;
-    self.prev = function(slide,slides){
-                slideIndex = slides.indexOf(slide);
-                for (var i = slideIndex;i > -1;i-- ){
-                    if(slides[i].slideRight){
-                        slides[i].slideLeft = true;
-                    }
-                    slides[i].slideRight = false;
-                }
-                if (slideIndex + 1 < slides.length){
-                    slides[slideIndex + 1].active = true;
-                }
-            };
-    self.next = function(slide,slides){
-                slideIndex = slides.indexOf(slide);
-                for (var i = slideIndex;i < slides.length;i++ ){
-                    slides[i].slideRight = true;
-                    slides[i].slideLeft = false;
-                }
-                if (slideIndex + 1 < slides.length){
-                    slides[slideIndex + 1].active = false;
-                }
-            };
 })
