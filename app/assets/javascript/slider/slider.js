@@ -1,21 +1,4 @@
 angular.module('app')
-.directive('slide',function(){
-	return {
-    restrict: 'E',
-    transclude: true,
-    require: '^slider',
-    scope: {
-    	heading: '@',
-        page: '@'
-    },
-    link: function(scope, elem, attr,sliderCtrl) {
-    	scope.active = false;
-        scope.slideRight = false;
-        scope.slideLeft = false;
-    	sliderCtrl.addSlide(scope);
-    }
-  }
-})
 .directive('slider', function(leaf,slides) {
   return {
     restrict: 'E',
@@ -39,6 +22,23 @@ angular.module('app')
                 leaf.next(slide,slides.slidesList)
             }
         }
+    }
+  }
+})
+.directive('slide',function(){
+    return {
+    restrict: 'E',
+    transclude: true,
+    require: '^slider',
+    scope: {
+        heading: '@',
+        page: '@'
+    },
+    link: function(scope, elem, attr,sliderCtrl) {
+        scope.active = false;
+        scope.slideRight = false;
+        scope.slideLeft = false;
+        sliderCtrl.addSlide(scope);
     }
   }
 })
