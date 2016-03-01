@@ -2,33 +2,28 @@ angular.module('app')
 .config([
 '$stateProvider',
 '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider) {
-
+function($stateProvider, $urlRouterProvider,$timeout) {
   $stateProvider
     .state('home', {
       url: '/home',
       templateUrl: 'home/_home.html',
-      controller: 'MainCtrl'
+      controller: 'HomeCtrl'
     })
     .state('about', {
       url: '/about',
       templateUrl: 'info/_about.html',
-      controller: 'AboutCtrl'
+      controller: 'AboutCtrl',
     })
     .state('bands', {
       url: '/bands',
       templateUrl: 'bands/_bands.html',
-      controller: 'MainCtrl'
+      controller: 'BandsCtrl'
     })
     .state('releases', {
       url: '/releases',
       templateUrl: 'releases/_releases.html',
-      controller: 'MainCtrl'
+      controller: 'ReleasesCtrl'
     });
 
   $urlRouterProvider.otherwise('home');
 }])
-.controller('MainCtrl', function() {
-  var self = this;
-  self.message = "The app routing is working!";
-});

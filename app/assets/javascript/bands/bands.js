@@ -1,6 +1,8 @@
 angular.module('app')
 .controller('BandsCtrl',['$scope',
 '$stateParams',
-function($scope, $stateParams){
-	console.log("bands")
+'slides',
+'leaf',
+function($scope, $stateParams, slides,leaf){
+	leaf.navigate('bands',slides.slidesList)
 }])
