@@ -19,12 +19,12 @@
 		}
 	}
 	.column.slideRight{
-		left: 90%;
-		animation: slideRight 0.2s linear;
+		animation: slideRight .5s ease-in-out;
+    animation-delay: .5s;
+    left: 90%;
 	}
 	.column.slideLeft{
-		left: 0;
-		animation: slideLeft 0.2s linear;
+		animation: slideLeft 0.5s ease-in-out;
 	}
 	.slide{
 		height: 100%;
