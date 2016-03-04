@@ -2,7 +2,7 @@ angular.module('app')
 .config([
 '$stateProvider',
 '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider,$timeout) {
+function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
@@ -12,7 +12,7 @@ function($stateProvider, $urlRouterProvider,$timeout) {
     .state('about', {
       url: '/about',
       templateUrl: 'info/_about.html',
-      controller: 'AboutCtrl',
+      controller: 'AboutCtrl'
     })
     .state('bands', {
       url: '/bands',

@@ -1,5 +1,5 @@
 angular.module('app')
-.directive('slider', function(leaf,slides,$location) {
+.directive('slider', function(leaf,slides,$location,$state) {
   return {
     restrict: 'E',
     transclude: true,
@@ -17,9 +17,9 @@ angular.module('app')
 
         self.selectSlide = function(slide){
             if (!slide.slideRight){
-                $location.url(slide.page)
+                $state.go(slide.page)
             }else{
-                $location.url(leaf.getRighter(slide,slides.slidesList))
+                $state.go(leaf.getRighter(slide,slides.slidesList))
             }
         }
     }
