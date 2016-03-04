@@ -2,8 +2,8 @@
   position: absolute;
 	height: 100vh;
 	width:100vw;
-  z-index: 999;
-	.column{
+  	z-index: 999;
+	.clmn{
 		position: relative;
 		display: inline-block;
 		cursor: pointer;
@@ -19,19 +19,19 @@
 			margin-top: 20%;
 		}
 	}
-  .column.slideRight, .column.slideLeft{
+  .clmn.slideRight, .clmn.slideLeft{
     -webkit-transition:all .5s ease-in-out;
     -moz-transition:all .5s ease-in-out;
     -o-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
   }
-	.column.slideRight{
+	.clmn.slideRight{
 		-webkit-transform:translate3d(90vw, 0, 0);
     -moz-transform:translate3d(90vw, 0, 0);
     transform:translate3d(90vw, 0, 0);
     animation-delay: .5s;
 	}
-	.column.slideLeft{
+	.clmn.slideLeft{
 		animation: slideLeft .5s ease-in-out;
 	}
 	.slide{
