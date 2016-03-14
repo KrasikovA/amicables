@@ -1,0 +1,25 @@
+[player]{
+	position: absolute;
+	z-index: 1000;
+	height: 100vh;
+	right: 0;
+	width: 5%;
+	min-width: 70px;
+	background-color: rgba(0,0,0,0.5);
+	padding-top: 5%;
+	p{
+		color: white;
+		text-align: center;
+		margin: 0;
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.homeLink{
+		cursor: pointer;
+	}
+}
+@media (max-width: 1050px) {
+	[player]{
+		display: none;
+	}
+}

@@ -1,7 +1,7 @@
 .slider{
   position: absolute;
-	height: 100vh;
-	width:100vw;
+	height: 100%;
+	width: 100%;
   	z-index: 999;
 	.clmn{
 		position: relative;
@@ -19,17 +19,17 @@
 			margin-top: 20%;
 		}
 	}
-  .clmn.slideRight, .clmn.slideLeft{
-    -webkit-transition:all .5s ease-in-out;
-    -moz-transition:all .5s ease-in-out;
-    -o-transition:all .5s ease-in-out;
-    transition:all .5s ease-in-out;
-  }
+	.clmn.slideRight, .clmn.slideLeft{
+	  -webkit-transition:all .5s ease-in-out;
+	  -moz-transition:all .5s ease-in-out;
+	  -o-transition:all .5s ease-in-out;
+	  transition:all .5s ease-in-out;
+	}
 	.clmn.slideRight{
-		-webkit-transform:translate3d(90vw, 0, 0);
-    -moz-transform:translate3d(90vw, 0, 0);
-    transform:translate3d(90vw, 0, 0);
-    animation-delay: .5s;
+		-webkit-transform:translate3d(87vw, 0, 0);
+	    -moz-transform:translate3d(87vw, 0, 0);
+	    transform:translate3d(87vw, 0, 0);
+	    animation-delay: .5s;
 	}
 	.clmn.slideLeft{
 		animation: slideLeft .5s ease-in-out;
