@@ -19,12 +19,6 @@
 			margin-top: 20%;
 		}
 	}
-	.clmn.slideRight, .clmn.slideLeft{
-	  -webkit-transition:all .5s ease-in-out;
-	  -moz-transition:all .5s ease-in-out;
-	  -o-transition:all .5s ease-in-out;
-	  transition:all .5s ease-in-out;
-	}
 	.clmn.slideRight{
 		-webkit-transform:translate3d(87vw, 0, 0);
 	    -moz-transform:translate3d(87vw, 0, 0);
@@ -40,5 +34,13 @@
 		z-index: -1;
 		position: absolute;
 		top: 0;
+	}
+}
+#root:not(.noAnimation){
+	.clmn.slideRight, .clmn.slideLeft{
+	  -webkit-transition:all .5s ease-in-out;
+	  -moz-transition:all .5s ease-in-out;
+	  -o-transition:all .5s ease-in-out;
+	  transition:all .5s ease-in-out;
 	}
 }

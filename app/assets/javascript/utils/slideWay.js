@@ -9,8 +9,12 @@ angular.module('app')
 					fromStateIndex = slidesList.indexOf(slidesList.find(function(slide){return slide.page === fromState.name}));
 				if (toState.name == 'home' || (Math.abs(fromStateIndex) < toStateIndex) && fromStateIndex != -1){
 					elem.addClass("slideLeft")
+					elem.removeClass("noAnimation")
 				}else {
-					elem.removeClass("slideLeft")
+					elem.removeClass("slideLeft noAnimation")
+				}
+				if (fromState.abstract){
+					elem.addClass("noAnimation");
 				}
 			})
 		}

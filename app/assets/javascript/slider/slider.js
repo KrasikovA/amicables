@@ -1,5 +1,5 @@
 angular.module('app')
-.directive('slider', function(leaf,slides,$location,$state) {
+.directive('slider', function(leaf,slides,$location,$state,$rootScope) {
   return {
     restrict: 'E',
     transclude: true,

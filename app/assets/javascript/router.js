@@ -15,6 +15,16 @@ function($stateProvider, $urlRouterProvider) {
       controller: 'AboutCtrl'
     })
     .state('bands', {
+      resolve: {
+        bands: function($q, $timeout,$http){
+            return $q(function(resolve,reject){
+              $http.get('/bands.json').success(function(data){
+                resolve(data)
+              })  
+            })
+         }
+      },
+      controllerAs: 'bands',
       url: '/bands',
       templateUrl: 'bands/_bands.html',
       controller: 'BandsCtrl'

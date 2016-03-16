@@ -19,7 +19,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'unicorn'
   gem 'pg', group: :production
   gem 'angular-rails-templates'
-
+  gem 'responders'
 # Use Capistrano for deployment
   
 group :development, :test do
