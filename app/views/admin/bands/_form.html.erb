@@ -1,0 +1,13 @@
+<%=form_for [:admin,@band],:html => {:multipart => true} do |f|%>
+	<%= f.fields_for :band_images do |builder| %>
+		<% if builder.object.new_record? %>
+			<p>
+			<%= builder.label :image, "Image File" %>
+			<%= builder.file_field :image %>
+			</p>
+		<% end %>
+	 
+	<% end %>
+	<%=f.text_field :name%>
+	<%= f.submit "Create" %>
+<%end%>
