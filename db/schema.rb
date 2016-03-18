@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317124713) do
+ActiveRecord::Schema.define(version: 20160318175835) do
 
   create_table "band_images", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -32,11 +32,39 @@ ActiveRecord::Schema.define(version: 20160317124713) do
     t.text     "description"
   end
 
+  create_table "release_images", force: :cascade do |t|
+    t.integer  "releases_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "release_images", ["releases_id"], name: "index_release_images_on_releases_id"
+
   create_table "releases", force: :cascade do |t|
     t.string   "name"
     t.integer  "band_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
   end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "number"
+    t.integer  "time"
+    t.integer  "releases_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "song_file_name"
+    t.string   "song_content_type"
+    t.integer  "song_file_size"
+    t.datetime "song_updated_at"
+  end
+
+  add_index "tracks", ["releases_id"], name: "index_tracks_on_releases_id"
 
 end

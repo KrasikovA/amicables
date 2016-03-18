@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
   namespace 'api' do
-    get 'bands/all', to: 'bands#all'
+    get 'bands', to: 'bands#all'
+    get 'releases', to: 'bands#all_with_releases'
   end
 
   namespace 'admin' do

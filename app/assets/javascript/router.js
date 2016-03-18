@@ -18,7 +18,7 @@ function($stateProvider, $urlRouterProvider) {
       resolve: {
         bands: function($q, $timeout,$http){
             return $q(function(resolve,reject){
-              $http.get('/api/bands/all.json').success(function(data){
+              $http.get('/api/bands.json').success(function(data){
                 resolve(data)
               })  
             })
@@ -32,7 +32,16 @@ function($stateProvider, $urlRouterProvider) {
     .state('releases', {
       url: '/releases',
       templateUrl: 'releases/_releases.html',
-      controller: 'ReleasesCtrl'
+      controller: 'ReleasesCtrl',
+      resolve: {
+        releases: function($q, $timeout,$http){
+            return $q(function(resolve,reject){
+              $http.get('/api/releases.json').success(function(data){
+                resolve(data)
+              })  
+            })
+         }
+      }
     });
 
   $urlRouterProvider.otherwise('home');

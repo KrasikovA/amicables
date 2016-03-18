@@ -1,1 +1,2 @@
-<%= link_to 'Create Band',new_admin_band_path%>
+<%= render partial: 'band',collection: @bands,as: :band%>
+<%= link_to 'Create new band',new_admin_band_path%>

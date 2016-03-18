@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  number: 1
+  time: 1
+  releases_id: 
+
+two:
+  title: MyString
+  number: 1
+  time: 1
+  releases_id: 
