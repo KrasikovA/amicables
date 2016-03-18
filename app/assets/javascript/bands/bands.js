@@ -8,4 +8,5 @@ function($scope, $stateParams, slides,leaf,bands){
 	var self = this;
 	leaf.navigate('bands',slides.slidesList)
 	self.bandsList = bands;
+	console.dir(self.bandsList)
 }])

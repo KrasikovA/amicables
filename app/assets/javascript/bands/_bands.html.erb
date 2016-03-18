@@ -2,7 +2,8 @@
 <div id="bands">
 	<ul>
 		<li ng-repeat="band in bands.bandsList">
-			{{band.name}}
+			{{band.name}} - {{band.description}}
+			<img ng-repeat="band_image in band.band_images" ng-src="{{band_image.image_url}}">
 		</li>
 	</ul>
 </div>

@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#index'
-  resources :bands, only: :index do
-    resources :releases, only: :index
+  namespace 'api' do
+    get 'bands/all', to: 'bands#all'
   end
+
   namespace 'admin' do
     get '/', to: 'admin#index'
     resources :bands

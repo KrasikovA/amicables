@@ -18,7 +18,7 @@ function($stateProvider, $urlRouterProvider) {
       resolve: {
         bands: function($q, $timeout,$http){
             return $q(function(resolve,reject){
-              $http.get('/bands.json').success(function(data){
+              $http.get('/api/bands/all.json').success(function(data){
                 resolve(data)
               })  
             })
