@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   namespace 'admin' do
-    get '/', to: 'admin#index'
+    get '/', to: redirect { "admin/bands"}
     resources :bands
   end
 

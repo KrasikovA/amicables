@@ -1,0 +1,5 @@
+<%= link_to 'Create new band',new_admin_band_path%>
+<hr>
+<table>
+	<%= render partial: 'band',collection: @bands,as: :band%>	
+</table>

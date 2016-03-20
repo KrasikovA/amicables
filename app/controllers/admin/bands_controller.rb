@@ -1,5 +1,10 @@
 class Admin::BandsController < ApplicationController
+	layout 'admin'
+	before_action :set_band, only: [:show, :edit, :update, :destroy]
 	def index
+		@bands = Band.all
+	end
+	def show
 	end
 	def new
 		@band = Band.new
@@ -19,16 +24,18 @@ class Admin::BandsController < ApplicationController
 		end
 	end
 	def edit
-		
-	end
-	def show
-		
 	end
 	def update
-		
+	end
+	def destroy
+		band.destroy
+		redirect_to '/admin/bands'
 	end
 	private 
 	def band_params
 		params.require(:band).permit!
+	end
+	def set_band
+		@band = Band.find(params[:id])
 	end
 end
