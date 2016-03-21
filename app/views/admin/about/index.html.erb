@@ -1,0 +1,6 @@
+<%=image_tag @about_back.image.url if !@about_back.nil?%>
+
+<%=form_for @new_about_back,html: { multipart: true }, url: admin_about_back_image_path do |f|%>
+	<%= f.file_field :image%>
+	<%= f.submit%>
+<%end%>

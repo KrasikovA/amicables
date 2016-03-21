@@ -1,0 +1,12 @@
+angular.module('app')
+.controller('AboutCtrl',[
+'$scope',
+'$stateParams',
+'slides',
+'leaf',
+'aboutBack',
+function($scope, $stateParams, slides,leaf,aboutBack){
+	var self = this;
+	leaf.navigate('about',slides.slidesList);
+	self.aboutBack = aboutBack.image_url
+}])
