@@ -6,5 +6,4 @@ angular.module('app')
 'releases',
 function($scope, $stateParams, slides,leaf,releases){
 	leaf.navigate('releases',slides.slidesList)
-	console.log(releases)
 }])

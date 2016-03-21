@@ -11,8 +11,18 @@ function($stateProvider, $urlRouterProvider) {
     })
     .state('about', {
       url: '/about',
+      controllerAs: 'about',
       templateUrl: 'info/_about.html',
-      controller: 'AboutCtrl'
+      controller: 'AboutCtrl',
+      resolve: {
+        aboutBack: function($q,$http){
+          return $q(function(resolve,reject){
+              $http.get('/api/about/back.json').success(function(data){
+                resolve(data);
+              })  
+            })
+        }
+      }
     })
     .state('bands', {
       resolve: {

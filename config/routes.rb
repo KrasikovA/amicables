@@ -7,11 +7,17 @@ Rails.application.routes.draw do
   namespace 'api' do
     get 'bands', to: 'bands#all'
     get 'releases', to: 'bands#all_with_releases'
+    get 'about/back', to: 'about#back'
+    get 'about/text', to: 'about#text'
   end
 
   namespace 'admin' do
     get '/', to: redirect { "admin/bands"}
     resources :bands
+    post 'about_back_image',to: 'back_images#about_create'
+    get 'about', to: 'about#index'
+    get 'releases', to: 'releases#index'
+    get 'main', to: 'main#index'
   end
 
   # Example of regular route:

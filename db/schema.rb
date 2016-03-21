@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318175835) do
+ActiveRecord::Schema.define(version: 20160321092910) do
+
+  create_table "back_images", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "name"
+  end
 
   create_table "band_images", force: :cascade do |t|
     t.datetime "created_at",         null: false
