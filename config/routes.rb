@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   namespace 'admin' do
-    get '/', to: redirect { "admin/routes"}
+    get '/', to: redirect { "admin/about"}
     resources :bands
     post 'about_back_image',to: 'back_images#about_create'
     get 'about', to: 'about#index'

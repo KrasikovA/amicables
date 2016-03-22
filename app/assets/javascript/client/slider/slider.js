@@ -4,7 +4,7 @@ angular.module('app')
     restrict: 'E',
     transclude: true,
     scope: { },
-    templateUrl: 'slider/_slider.html',
+    templateUrl: 'client/slider/_slider.html',
     bindToController: true,
     controllerAs: 'slider',
     controller: function() {

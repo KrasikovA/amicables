@@ -24,5 +24,6 @@ module Amicables
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << "vendor/assets"
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.angular_templates.inside_paths   = ['app/assets/javascript/client']
   end
 end

@@ -1,7 +1,7 @@
 angular.module('app')
 .directive('player',['$state',function($state){
 	return {
-		templateUrl:"player/_player.html",
+		templateUrl:"client/player/_player.html",
 		restrict: 'A',
 	    transclude: true,
 	    scope: { },

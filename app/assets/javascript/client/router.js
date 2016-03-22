@@ -6,13 +6,13 @@ function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'home/_home.html',
+      templateUrl: 'client/home/_home.html',
       controller: 'HomeCtrl'
     })
     .state('about', {
       url: '/about',
       controllerAs: 'about',
-      templateUrl: 'info/_about.html',
+      templateUrl: 'client/info/_about.html',
       controller: 'AboutCtrl',
       resolve: {
         aboutBack: function($q,$http){
@@ -36,12 +36,12 @@ function($stateProvider, $urlRouterProvider) {
       },
       controllerAs: 'bands',
       url: '/bands',
-      templateUrl: 'bands/_bands.html',
+      templateUrl: 'client/bands/_bands.html',
       controller: 'BandsCtrl'
     })
     .state('releases', {
       url: '/releases',
-      templateUrl: 'releases/_releases.html',
+      templateUrl: 'client/releases/_releases.html',
       controller: 'ReleasesCtrl',
       resolve: {
         releases: function($q, $timeout,$http){
