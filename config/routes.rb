@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     post 'about_back_image',to: 'back_images#about_create'
     get 'about', to: 'about#index'
     get 'releases', to: 'releases#index'
-    get 'main', to: 'main#index'
+    get 'home', to: 'home#index'
   end
 
   # Example of regular route:

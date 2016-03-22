@@ -4,13 +4,9 @@
 	<%= f.file_field :image%>
 	<%= f.submit%>
 <%end%>
+<div class="adminSlider">
+	<%=link_to 'about','/admin/bands',class: "adminClmn"%>
+	<%=link_to 'bands','/admin/releases',class: "adminClmn"%>
+	<%=link_to 'releases','/admin/home',class: "adminClmn"%>
+</div>
 
-
-<script type="text/javascript">
-	function letterByLetter(){
-		$(".clmn").forEach(function(el){
-			console.log(el)
-		})
-
-	}
-</script>
