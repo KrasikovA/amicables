@@ -11,5 +11,18 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
+//= require medium-editor
+//here will be all global functions
+function letterByLetter(){
+	var linksList = $(".adminClmn");
+	linksList.each(function(index,el){
+		var $el = $(el),
+			content = $el.html(),
+			newContent = ""
+		for (var i = 0; i < content.length; i++){
+			newContent += "<p>" + content[i] + "</p>";
+		}
+		$el.html(newContent)
+	})
+}
