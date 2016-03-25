@@ -12,7 +12,7 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( admin.js)
 Rails.application.config.assets.precompile += %w( admin.css )
 %w(home about bands releases).each do |controller|
-  Rails.application.config.assets.precompile += ["#{controller}.js","admin/#{controller}.css"]
+  Rails.application.config.assets.precompile += ["admin/#{controller}.js.erb","admin/#{controller}.css"]
 end
 Rails.application.config.assets.precompile += %w( medium-editor/dist/css/medium-editor.css )
 Rails.application.config.assets.precompile += %w( medium-editor/dist/css/themes/* )

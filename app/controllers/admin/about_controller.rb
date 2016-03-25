@@ -20,7 +20,6 @@ class Admin::AboutController < ApplicationController
 	end
 
 	def set_about_page
-		debugger
 		@about_page = AboutPage.first
 	end
 end

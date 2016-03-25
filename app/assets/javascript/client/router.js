@@ -21,6 +21,13 @@ function($stateProvider, $urlRouterProvider) {
                 resolve(data);
               })  
             })
+        },
+        aboutDescription: function($q,$http){
+          return $q(function(resolve,reject){
+              $http.get('/api/about/description.json').success(function(data){
+                resolve(data);
+              })  
+            })
         }
       }
     })

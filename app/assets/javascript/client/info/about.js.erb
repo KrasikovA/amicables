@@ -5,8 +5,10 @@ angular.module('app')
 'slides',
 'leaf',
 'aboutBack',
-function($scope, $stateParams, slides,leaf,aboutBack){
+'aboutDescription',
+function($scope, $stateParams, slides,leaf,aboutBack,aboutDescription){
 	var self = this;
 	leaf.navigate('about',slides.slidesList);
-	self.aboutBack = aboutBack.image_url
+	self.aboutBack = aboutBack.image_url;
+	self.description = aboutDescription.description;
 }])

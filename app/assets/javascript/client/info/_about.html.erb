@@ -1,13 +1,5 @@
 <img ng-src="{{about.aboutBack}}" class="mainBack">
 <div id="about">
 	<hr align="left">
-	<p>
-		we decided once that the noise our friends make should be documented. our aim is to produce some special kind of artifacts, not just to pack music up, therefore we focus much on cover art and all to make each thing really unique. available stuff can be purchased at our discogs store. also, everything can (and should) be listened and downloaded for free at our bandcamp.
-	</p>
-	<p>
-		feel free to turn to us with whatever question you have. 002197@gmail.com
-	</p>
-	<p>
-		cheers from moscow
-	</p>
+	<p ng-html-bind="{{about.description}}"></p>
 </div>
