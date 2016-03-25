@@ -1,0 +1,13 @@
+$(document).ready(
+	function(){
+		var elements = document.getElementById('editable'),
+	    editor = new MediumEditor(elements,{
+	    });
+	    editor.pasteHTML("<%=@about_page.description%>");
+		function sendDescription(event){
+			var desc = editor.serialize().editable.value,
+				$hidden = $("#about_page_description");
+			$hidden.val(desc);
+		}	
+	}
+)

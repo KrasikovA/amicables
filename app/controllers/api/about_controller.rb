@@ -4,4 +4,6 @@ class Api::AboutController < ApplicationController
 		aboutBack = BackImage.find_by(name: 'about')
 		respond_with aboutBack.to_json(methods: :image_url,only: :image_url)
 	end
+	def description
+	end
 end

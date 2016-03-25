@@ -3,7 +3,8 @@
 <head>
   <title>Amicables</title>
   <%= stylesheet_link_tag 'admin', params[:controller], media: 'all' %>
-  <%= javascript_include_tag 'admin' %>
+  <%= javascript_include_tag 'admin',params[:controller] %>
+  <%= favicon_link_tag 'favicon.ico'%>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -14,7 +15,6 @@
 		<%=link_to 'releases','/admin/home',class: "adminClmn"%>
 	</div>
 	<%= yield%>
-	<%= javascript_include_tag params[:controller] %>
 	<script type="text/javascript">
 		letterByLetter();
 	</script>

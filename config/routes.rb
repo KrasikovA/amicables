@@ -8,13 +8,14 @@ Rails.application.routes.draw do
     get 'bands', to: 'bands#all'
     get 'releases', to: 'bands#all_with_releases'
     get 'about/back', to: 'about#back'
-    get 'about/text', to: 'about#text'
+    get 'about/description', to: 'about#description'
   end
 
   namespace 'admin' do
     get '/', to: redirect { "admin/about"}
     resources :bands
-    post 'about_back_image',to: 'back_images#about_create'
+    post 'about/about_back_image',to: 'back_images#about_create'
+    post 'about/description', to: 'about#update_description'
     get 'about', to: 'about#index'
     get 'releases', to: 'releases#index'
     get 'home', to: 'home#index'

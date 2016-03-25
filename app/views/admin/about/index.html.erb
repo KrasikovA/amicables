@@ -2,13 +2,17 @@
 <%= stylesheet_link_tag 'medium-editor/dist/css/themes/flat', media: 'all' %>
 <%=image_tag @about_back.image.url,class: 'mainBack' if !@about_back.nil?%>
 
-<%=form_for @new_about_back,html: { multipart: true }, url: admin_about_back_image_path do |f|%>
+<%=form_for @new_about_back,html: { multipart: true }, url: admin_about_about_back_image_path do |f|%>
 	<%= f.file_field :image%>
 	<%= f.submit%>
 <%end%>
-
 <div id="editable">
 	
 </div>
+<%=form_for @about_page,url: admin_about_description_path, method: :post do |f|%>
+	<%=f.hidden_field :description%>
+	<%=f.submit onclick: "sendDescription()"%>
+<%end%>
+
 
 
