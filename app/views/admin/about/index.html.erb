@@ -7,8 +7,9 @@
 	<%= f.submit%>
 <%end%>
 <div id="editable">
-	
+	<%=raw @about_page.description%>
 </div>
+
 <%=form_for @about_page,url: admin_about_description_path, method: :post do |f|%>
 	<%=f.hidden_field :description%>
 	<%=f.submit%>

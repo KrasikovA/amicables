@@ -1,5 +1,3 @@
 <img ng-src="{{about.aboutBack}}" class="mainBack">
-<div id="about">
-	<hr align="left">
-	<p ng-html-bind="{{about.description}}"></p>
+<div id="about" ng-bind-html="about.description">
 </div>
