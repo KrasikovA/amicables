@@ -1,13 +1,13 @@
 <%=form_for [:admin,@band],:html => {:multipart => true} do |f|%>
 	<%= f.fields_for :band_images do |nested_form| %>
 		<% if nested_form.object.new_record? %>
-			<p>
+			<p class="addField">
 			<%= nested_form.label :image, "Image File" %>
 			<%= nested_form.file_field :image %>
 			</p>
 		<% end %>
-	 
 	<% end %>
+	<p><a id="addField">add field</a></p>
 	<%=f.text_field :name%>
 	<%=f.text_area :description%>
 	<%= f.submit "Create" %>

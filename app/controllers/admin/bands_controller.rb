@@ -8,7 +8,7 @@ class Admin::BandsController < ApplicationController
 	end
 	def new
 		@band = Band.new
-		3.times {@band.band_images.build}
+		@band.band_images.build
 	end
 	def create
 		@band = Band.new(band_params)
@@ -18,7 +18,7 @@ class Admin::BandsController < ApplicationController
 			end
 		end
 		if @band.save
-			redirect_to :admin
+			redirect_to '/admin/bands'
 		else
 			render action: 'new'
 		end
