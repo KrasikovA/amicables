@@ -1,9 +1,8 @@
 class Admin::AboutController < ApplicationController
+	include Backgroundable 
 	layout 'admin'
 	before_action :set_about_page
 	def index
-		@about_back = BackImage.find_by name: 'about'
-		@new_about_back = BackImage.new
 	end
 
 	def update_description

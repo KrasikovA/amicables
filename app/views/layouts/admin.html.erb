@@ -9,14 +9,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
+	<%=image_tag @old_back.image.url,class: 'mainBack' if !@old_back.nil?%>
+	<%=form_for @new_back,html: { multipart: true }, url: send("#{params[:controller].gsub('/','_')}_back_image_path") do |f|%>
+		<%= f.file_field :image%>
+		<%= f.submit%>
+	<%end%>
 	<div class="adminSlider">
 		<%=link_to 'about','/admin/bands',class: "adminClmn"%>
 		<%=link_to 'bands','/admin/releases',class: "adminClmn"%>
 		<%=link_to 'releases','/admin/home',class: "adminClmn"%>
 	</div>
 	<%= yield%>
-	<script type="text/javascript">
-		letterByLetter();
-	</script>
 </body>
 </html>
