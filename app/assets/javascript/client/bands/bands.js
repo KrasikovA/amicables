@@ -4,9 +4,11 @@ angular.module('app')
 'slides',
 'leaf',
 'bands',
-function($scope, $stateParams, slides,leaf,bands){
+'bandsBack',
+function($scope, $stateParams, slides,leaf,bands,bandsBack){
 	var self = this;
 	leaf.navigate('bands',slides.slidesList)
 	self.bandsList = bands;
-	console.dir(self.bandsList)
+	self.bandsBack = bandsBack.image_url;
+	console.dir(self.bandsBack)
 }])

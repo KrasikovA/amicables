@@ -5,11 +5,21 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
   namespace 'api' do
+    ##bands
     get 'bands', to: 'bands#all'
-    get 'releases', to: 'bands#all_with_releases'
-    get 'about/back', to: 'about#back'
-    get 'about/description', to: 'about#description'
     get 'bands/back', to: 'bands#back'
+    ##
+    ##releases
+    #get 'releases', to: 'bands#all_with_releases'
+    get 'releases/back', to: 'releases#back'
+    ##
+    ##about
+    get 'about/description', to: 'about#description'
+    get 'about/back', to: 'about#back'
+    ##
+    ##home
+    get 'home/back',to: 'home#back'
+    ##
   end
 
   namespace 'admin' do
@@ -22,6 +32,7 @@ Rails.application.routes.draw do
     get 'releases', to: 'releases#index'
     post 'releases/back_image',to: 'back_images#releases_create'
     get 'home', to: 'home#index'
+    post 'home/back_image',to: 'back_images#home_create'
   end
 
   # Example of regular route:

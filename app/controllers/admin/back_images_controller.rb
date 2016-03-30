@@ -26,7 +26,17 @@ class Admin::BackImagesController < ApplicationController
 		new_about_back.name = 'releases'
 		new_about_back.save!
 		
-		redirect_to admin_bands_path
+		redirect_to admin_releases_path
+	end
+
+	def home_create
+		old_about_back = BackImage.find_by(name: 'home')
+		old_about_back.destroy! if !old_about_back.nil?
+		new_about_back = BackImage.new(back_image_params)
+		new_about_back.name = 'home'
+		new_about_back.save!
+		
+		redirect_to admin_home_path
 	end
 	private 
 	def back_image_params

@@ -7,7 +7,17 @@ function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/home',
       templateUrl: 'client/home/_home.html',
-      controller: 'HomeCtrl'
+      controllerAs: 'home',
+      controller: 'HomeCtrl',
+      resolve:{
+        homeBack: function($q,$http){
+          return $q(function(resolve,reject){
+            $http.get('/api/home/back.json').success(function(data){
+              resolve(data);
+            })
+          })
+        }
+      }
     })
     .state('about', {
       url: '/about',
@@ -33,13 +43,20 @@ function($stateProvider, $urlRouterProvider) {
     })
     .state('bands', {
       resolve: {
-        bands: function($q, $timeout,$http){
+        bands: function($q,$http){
             return $q(function(resolve,reject){
               $http.get('/api/bands.json').success(function(data){
                 resolve(data)
               })  
             })
-         }
+         },
+        bandsBack: function($q, $http){
+          return $q(function(resolve,reject){
+            $http.get('/api/bands/back.json').success(function(data){
+              resolve(data)
+            })  
+          })
+        }
       },
       controllerAs: 'bands',
       url: '/bands',
@@ -47,17 +64,25 @@ function($stateProvider, $urlRouterProvider) {
       controller: 'BandsCtrl'
     })
     .state('releases', {
+      controllerAs: 'releases',
       url: '/releases',
       templateUrl: 'client/releases/_releases.html',
       controller: 'ReleasesCtrl',
       resolve: {
-        releases: function($q, $timeout,$http){
+        /*releases: function($q, $http){
             return $q(function(resolve,reject){
               $http.get('/api/releases.json').success(function(data){
                 resolve(data)
               })  
             })
-         }
+         },*/
+        releasesBack: function($q,$http){
+          return $q(function(resolve,reject){
+            $http.get('/api/releases/back.json').success(function(data){
+              resolve(data);
+            })
+          })
+        }
       }
     });
 

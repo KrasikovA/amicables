@@ -6,7 +6,6 @@ class Admin::AboutController < ApplicationController
 	end
 
 	def update_description
-		debugger
 		if @about_page.update(description: about_description_params[:description])
 			redirect_to '/admin/about'
 		else
