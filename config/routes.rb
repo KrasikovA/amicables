@@ -24,15 +24,25 @@ Rails.application.routes.draw do
 
   namespace 'admin' do
     get '/', to: redirect { "admin/about"}
-    resources :bands
+    ##bands
+    resources :bands do
+      resources :releases, except: :index
+    end
     post 'bands/back_image',to: 'back_images#bands_create'
-    post 'about/back_image',to: 'back_images#about_create'
-    post 'about/description', to: 'about#update_description'
-    get 'about', to: 'about#index'
+    ##
+    ##releases
     get 'releases', to: 'releases#index'
     post 'releases/back_image',to: 'back_images#releases_create'
+    ##
+    ##about
+    get 'about', to: 'about#index'
+    post 'about/back_image',to: 'back_images#about_create'
+    post 'about/description', to: 'about#update_description'
+    ##
+    ##home
     get 'home', to: 'home#index'
     post 'home/back_image',to: 'back_images#home_create'
+    ##
   end
 
   # Example of regular route:

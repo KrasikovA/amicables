@@ -1,0 +1,7 @@
+<ul>
+	<li>
+		<%=band.name%>
+		<%=render partial: 'release',collection: band.releases, as: :release,locals: {band: band}%>
+		<a href="<%=new_admin_band_release_url(band)%>">new release</a>
+	</li>
+</ul>

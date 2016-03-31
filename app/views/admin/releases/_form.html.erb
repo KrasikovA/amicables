@@ -1,0 +1,20 @@
+<%=form_for @release,url: admin_band_releases_url(@band),html: {multipart: true} do |f|%>
+	<p><%=f.text_field :name%></p>
+	<p><%=f.text_area :description%></p>
+	
+
+	<%=f.fields_for :release_images do |nested_form_1|%>
+		<p class="addField">
+			<%= nested_form_1.label :image, "Image File" %>
+			<%= nested_form_1.file_field :image %>
+		</p>
+	<%end%>
+
+	<%=f.fields_for :tracks do |nested_form_2|%>
+		<p class="addField">
+			<%= nested_form_2.label :song, "MP3 File" %>
+			<%= nested_form_2.file_field :song %>
+		</p>
+	<%end%>
+	<%=f.submit%>
+<%end%>

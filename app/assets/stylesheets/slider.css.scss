@@ -1,18 +1,18 @@
 .slider{
   	position: absolute;
-	height: 100%;
-	width: 100%;
-	z-index: 998;
+	height: 1%;
+	width: 1%;
+	z-index: 999;
 	.clmn{
 		color: white;
-		position: relative;
+		position: absolute;
 		display: inline-block;
 		cursor: pointer;
 		vertical-align: top;
 		padding-left: 1%;
 		padding-right: 1%;
-		height: 100%;
-		padding-top: 6%;
+		height: 100vh;
+		padding-top: 4.5rem;
 		p{
 			font-size: 18px;
 			color: white;
@@ -20,10 +20,16 @@
 			margin-top: 20%;
 		}
 	}
+	.clmn:nth-child(2){
+		margin-left: 2rem;
+	}
+	.clmn:nth-child(3){
+		margin-left: 4rem;
+	}
 	.clmn.slideRight{
-		-webkit-transform:translate3d(87vw, 0, 0);
-	    -moz-transform:translate3d(87vw, 0, 0);
-	    transform:translate3d(87vw, 0, 0);
+		-webkit-transform:translate3d(88vw, 0, 0);
+	    -moz-transform:translate3d(88vw, 0, 0);
+	    transform:translate3d(88vw, 0, 0);
 	    animation-delay: .5s;
 	}
 	.clmn.slideLeft{

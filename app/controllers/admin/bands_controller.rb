@@ -1,6 +1,6 @@
 class Admin::BandsController < ApplicationController
 	include Backgroundable
-	layout 'admin'
+	layout :resolve_layout
 	before_action :set_band, only: [:show, :edit, :update, :destroy]
 	def index
 		@bands = Band.all
@@ -38,5 +38,14 @@ class Admin::BandsController < ApplicationController
 	end
 	def set_band
 		@band = Band.find(params[:id])
+	end
+	def resolve_layout
+		case action_name
+		when 'index'
+			'admin'
+		else
+			'admin_no_slider'
+		end
+			
 	end
 end
