@@ -1,1 +1,34 @@
 <img ng-src="{{releases.releasesBack}}" class="mainBack">
+<div class="releases">
+	<ul>
+		<li ng-repeat="band in releases.bands">
+			{{band.name}}
+			<ul>
+				<li ng-repeat="release in band.releases">
+					{{release.name}}
+					<img ng-repeat="release_image in release.release_images" ng-src="{{release_image.image_url}}">
+					<p>
+						<div ng-repeat="track in release.tracks">
+							<videogular  vg-theme="releases.theme.url" class="videogular-container audio">
+								<vg-media vg-src="track.songs" vg-type="audio"></vg-media>
+								<vg-controls>
+								    <vg-play-pause-button></vg-play-pause-button>
+								    <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+								    <vg-scrub-bar>
+								        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+								    </vg-scrub-bar>
+								    <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+								    <vg-volume>
+								        <vg-mute-button></vg-mute-button>
+								    </vg-volume>
+								</vg-controls>
+
+							</videogular>	
+						</div>
+						
+					</p>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'bands/back', to: 'bands#back'
     ##
     ##releases
-    #get 'releases', to: 'bands#all_with_releases'
+    get 'releases', to: 'bands#all_with_releases'
     get 'releases/back', to: 'releases#back'
     ##
     ##about

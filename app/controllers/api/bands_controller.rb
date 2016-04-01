@@ -10,7 +10,23 @@ class Api::BandsController < ApplicationController
 	end
 	def all_with_releases
 		bands = Band.includes(:releases).select(:name,:description,:id)
-		respond_with bands.to_json(include: :releases)
+		respond_with bands.to_json(include: 
+			{releases: 
+				{include:  
+					{tracks:
+						{
+							methods: :song_url,
+							only: :song_url
+						},
+					release_images: 
+						{
+							methods: :image_url,
+							only: :image_url
+						}
+					},
+				only: [:name,:description,:id]
+				}
+			})
 	end
 	def back
 		aboutBack = BackImage.find_by(name: 'about')

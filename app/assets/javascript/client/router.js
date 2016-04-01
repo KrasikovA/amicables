@@ -69,13 +69,13 @@ function($stateProvider, $urlRouterProvider) {
       templateUrl: 'client/releases/_releases.html',
       controller: 'ReleasesCtrl',
       resolve: {
-        /*releases: function($q, $http){
+        releases: function($q, $http){
             return $q(function(resolve,reject){
               $http.get('/api/releases.json').success(function(data){
                 resolve(data)
               })  
             })
-         },*/
+         },
         releasesBack: function($q,$http){
           return $q(function(resolve,reject){
             $http.get('/api/releases/back.json').success(function(data){
