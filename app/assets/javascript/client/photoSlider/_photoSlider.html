@@ -1,0 +1,3 @@
+<button ng-click="prevImage()">prev</button>
+<img ng-repeat="image in images" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{image.image_url}}"></img>
+<button ng-click="nextImage()">next</button>

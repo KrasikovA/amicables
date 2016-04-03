@@ -5,7 +5,7 @@ class Api::BandsController < ApplicationController
 		respond_with aboutBack.to_json(methods: :image_url,only: :image_url)
 	end
 	def all
-		bands = Band.includes(:band_images).select(:name,:description,:id)
+		bands = Band.select(:name,:description,:id)
 		respond_with bands.to_json(include: {band_images: {methods: :image_url,only: :image_url}})
 	end
 	def all_with_releases
@@ -31,5 +31,9 @@ class Api::BandsController < ApplicationController
 	def back
 		aboutBack = BackImage.find_by(name: 'about')
 		respond_with aboutBack.to_json(methods: :image_url,only: :image_url)
+	end
+	def images
+		band_images = Band.find(params[:id]).band_images
+		respond_with band_images.to_json(methods: :image_url,only: :image_url)
 	end
 end

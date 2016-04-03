@@ -2,8 +2,8 @@
 <div id="bands">
 	<ul>
 		<li ng-repeat="band in bands.bandsList">
-			{{band.name}} - {{band.description}}
-			<img ng-repeat="band_image in band.band_images" ng-src="{{band_image.image_url}}">
+			<a href="" ng-click="bands.onClick(band.id)">{{band.name}}</a> - {{band.description}}
 		</li>
 	</ul>
+	<div photo-slider bandId="{{bands.activeBand}}"></div>
 </div>
