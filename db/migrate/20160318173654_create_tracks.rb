@@ -4,7 +4,7 @@ class CreateTracks < ActiveRecord::Migration
       t.string :title
       t.integer :number
       t.integer :time
-      t.references :releases, index: true, foreign_key: true
+      t.references :release, index: true, foreign_key: true
 
       t.timestamps null: false
     end

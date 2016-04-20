@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160331014000) do
     t.string   "title"
     t.integer  "number"
     t.integer  "time"
-    t.integer  "releases_id"
+    t.integer  "release_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "song_file_name"
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 20160331014000) do
     t.datetime "song_updated_at"
   end
 
-  add_index "tracks", ["releases_id"], name: "index_tracks_on_releases_id"
+  add_index "tracks", ["release_id"], name: "index_tracks_on_release_id"
 
 end
