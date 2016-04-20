@@ -17,11 +17,6 @@ class Api::BandsController < ApplicationController
 						{
 							methods: :song_url,
 							only: :song_url
-						},
-					release_images: 
-						{
-							methods: :image_url,
-							only: :image_url
 						}
 					},
 				only: [:name,:description,:id]
