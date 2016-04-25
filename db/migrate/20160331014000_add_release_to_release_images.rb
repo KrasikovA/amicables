@@ -1,5 +1,5 @@
 class AddReleaseToReleaseImages < ActiveRecord::Migration
   def change
-    add_column :release_images, :release_id, :reference
+  	add_reference :release_images, :releases, index: true, foreign_key: true
   end
 end
