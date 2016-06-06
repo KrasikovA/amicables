@@ -2,7 +2,7 @@
 <%= stylesheet_link_tag 'medium-editor/dist/css/themes/flat', media: 'all' %>
 
 <div id="editable">
-	<%=raw @about_page.description%>
+	<%=raw @about_page.description if @about_page%>
 </div>
 
 <%=form_for @about_page,url: admin_about_description_path, method: :post do |f|%>

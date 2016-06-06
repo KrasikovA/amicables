@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
   gem 'unicorn'
-  gem 'pg', group: :production
+  gem 'pg'
   gem 'angular-rails-templates'
   gem 'responders'
   gem 'paperclip'
@@ -35,7 +35,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
-  gem 'sqlite3'
+  #gem 'sqlite3'
   gem 'byebug'
 end
 

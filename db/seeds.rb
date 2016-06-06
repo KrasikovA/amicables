@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+BackImage.create(
+		[
+			{name: 'about',image: File.new("#{Rails.root}/app/assets/images/aboutBack.png")},
+			{name: 'home',image: File.new("#{Rails.root}/app/assets/images/mainBack.png")},
+			{name: 'releases',image: File.new("#{Rails.root}/app/assets/images/mainBack.png")},
+			{name: 'bands',image: File.new("#{Rails.root}/app/assets/images/mainBack.png")}
+		]
+	)
+AboutPage.create(description: "<p>Some fill text</p>")

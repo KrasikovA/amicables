@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331014000) do
+ActiveRecord::Schema.define(version: 20160324170713) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "about_pages", force: :cascade do |t|
     t.text     "description"
@@ -39,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160331014000) do
     t.integer  "band_id"
   end
 
-  add_index "band_images", ["band_id"], name: "index_band_images_on_band_id"
+  add_index "band_images", ["band_id"], name: "index_band_images_on_band_id", using: :btree
 
   create_table "bands", force: :cascade do |t|
     t.string   "name"
@@ -48,8 +51,17 @@ ActiveRecord::Schema.define(version: 20160331014000) do
     t.text     "description"
   end
 
-# Could not dump table "release_images" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "release_images", force: :cascade do |t|
+    t.integer  "release_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "release_images", ["release_id"], name: "index_release_images_on_release_id", using: :btree
 
   create_table "releases", force: :cascade do |t|
     t.string   "name"
@@ -72,6 +84,9 @@ ActiveRecord::Schema.define(version: 20160331014000) do
     t.datetime "song_updated_at"
   end
 
-  add_index "tracks", ["release_id"], name: "index_tracks_on_release_id"
+  add_index "tracks", ["release_id"], name: "index_tracks_on_release_id", using: :btree
 
+  add_foreign_key "band_images", "bands"
+  add_foreign_key "release_images", "releases"
+  add_foreign_key "tracks", "releases"
 end

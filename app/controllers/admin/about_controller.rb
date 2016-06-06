@@ -12,12 +12,13 @@ class Admin::AboutController < ApplicationController
 			render status: 500
 		end
 	end
+	
 	private 
 	def about_description_params
 		params.require(:about_page).permit(:description)
 	end
 
 	def set_about_page
-		@about_page = AboutPage.first
+		@about_page = AboutPage.first.nil? ? AboutPage.new : AboutPage.first
 	end
 end
