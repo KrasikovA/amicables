@@ -1,7 +1,7 @@
 angular.module('app')
 .directive('slider', function(leaf,slides,$location,$state,$rootScope) {
   return {
-    restrict: 'E',
+    restrict: 'A',
     transclude: true,
     scope: { },
     templateUrl: 'client/slider/_slider.html',

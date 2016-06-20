@@ -9,3 +9,6 @@ angular.module('app',
 .value('slides',{
 	slidesList : []
 })
+.value('background',{
+	backgroundURL: ""
+})

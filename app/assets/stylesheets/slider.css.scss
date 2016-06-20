@@ -1,46 +1,39 @@
 .slider{
-  	position: absolute;
-	height: 1%;
-	width: 1%;
-	z-index: 999;
-	.clmn{
-		color: white;
-		position: absolute;
-		display: inline-block;
-		cursor: pointer;
-		vertical-align: top;
-		padding-left: 1%;
-		padding-right: 1%;
+	height: 100%;
+	width: 90px;
+	float: left;
+	ul{
+		width: 100%;
 		height: 100vh;
-		padding-top: 4.5rem;
-		p{
-			font-size: 18px;
+		.clmn{
 			color: white;
-			margin: 0;
-			margin-top: 20%;
+			cursor: pointer;
+			vertical-align: top;
+			float: left;
+			display: inline-block;
+			height: 100vh; 
+			width: 32%;
+			p{
+				font-size: 18px;
+				color: white;
+				margin: 0;
+				margin-top: 20%;
+			}
 		}
-	}
-	.clmn:nth-child(2){
-		margin-left: 2rem;
-	}
-	.clmn:nth-child(3){
-		margin-left: 4rem;
-	}
-	.clmn.slideRight{
-		-webkit-transform:translate3d(88vw, 0, 0);
-	    -moz-transform:translate3d(88vw, 0, 0);
-	    transform:translate3d(88vw, 0, 0);
-	    animation-delay: .5s;
-	}
-	.clmn.slideLeft{
-		animation: slideLeft .5s ease-in-out;
-	}
-	.slide{
-		height: 100%;
-		width: 80%;
-		z-index: -1;
-		position: absolute;
-		top: 0;
+		.clmn.slideRight{
+			-webkit-transform:translateX(100%);
+		    -moz-transform:translateX(100%);
+		    transform:translateX(100%);
+		    animation-delay: .5s;
+		}
+		.clmn.slideLeft{
+			animation: slideLeft .5s ease-in-out;
+		}
+		.slide{
+			height: 100%;
+			width: 80%;
+			top: 0;
+		}
 	}
 }
 #root:not(.noAnimation){

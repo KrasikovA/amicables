@@ -1,10 +1,7 @@
 [player]{
-	position: absolute;
-	z-index: 1000;
 	height: 100vh;
-	right: 0;
-	width: 5rem;
-	min-width: 70px;
+	width: 67px;
+	float: right;
 	background-color: rgba(0,0,0,0.5);
 	padding-top: 5%;
 	p{
@@ -16,10 +13,5 @@
 	}
 	.homeLink{
 		cursor: pointer;
-	}
-}
-@media (max-width: 1050px) {
-	[player]{
-		display: none;
 	}
 }

@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:KrasikovA/amicables.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deployer/apps/amicables'
-server '192.168.1.70', user: 'deployer'
+server '192.168.1.71', user: 'deployer'
 set :keep_releases, 2
 set :rvm_type, :user   
 set :rvm_ruby_version, '2.2.3'
