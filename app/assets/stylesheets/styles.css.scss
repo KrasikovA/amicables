@@ -1,12 +1,5 @@
-@font-face {
-	font-family: 'BPtypewrite';
-	src: asset-url('BPtypewrite.otf');
-
-};
-@font-face {
-  	font-family: 'ProximaNova';
-  	src: url('ProximaNova-Reg.otf');
-}
+@import "variables";
+@import "fonts";
 body, html{
 	height:  100%;
     margin:  0px auto;
@@ -16,14 +9,13 @@ body, html{
 *{
 	font-family: "BPtypewrite"
 }
-
 #root{
 	position: relative;
 	[ui-view]{
 		width: auto;
 		height: 100%;
-		margin-left: 90px;
-		margin-right: 157px;
+		margin-left: $player-width;
+		margin-right: $player-width + $slider-clmn-width * 3;
 		overflow: hidden;
 	}
 }
@@ -39,56 +31,24 @@ body, html{
 /* animations start*/
 #root:not(.noAnimation){
 	[ui-view].ng-enter, [ui-view].ng-leave {
+		@include slide-transition(.5s,ease-in-out);
 		position: absolute;
-		z-index: -1;
 		width: 100%;
 		height: 100%;
 		margin: 0;
-	 	-webkit-transition:all .5s ease-in-out;
-		-moz-transition:all .5s ease-in-out;
-		-o-transition:all .5s ease-in-out;
-		transition:all .5s ease-in-out;
+		z-index: -1;
 	}
 }
-
-[ui-view].ng-enter{
-	left: -100%;
-}
-[ui-view].ng-enter-active {
-  -webkit-transform:translateX(100%);
-  -moz-transform:translateX(100%);
-  transform:translateX(100%);
-}
-[ui-view].ng-leave {
-  -webkit-transform:translateX(0);
-  -moz-transform:translateX(0);
-  transform:translateX(0);
-}
-[ui-view].ng-leave-active { 
-  -webkit-transform:translateX(100%);
-  -moz-transform:translateX(100%);
-  transform:translateX(100%);
-}	
-
-
+/* slide right*/
+[ui-view].ng-enter{ left: -100%; }
+[ui-view].ng-enter-active { @include slide-transform(100%); }
+[ui-view].ng-leave { @include slide-transform(0); }
+[ui-view].ng-leave-active { @include slide-transform(100%); }	
+/* slide left*/
 .slideLeft{
-	[ui-view].ng-enter {
-		left: 100%;
-	}
-	[ui-view].ng-enter-active{
-		-webkit-transform:translateX(-100%);
-	  	-moz-transform:translateX(-100%);
-	  	transform:translateX(-100%);
-	}
-	[ui-view].ng-leave {
-	  -webkit-transform:translateX(0);
-	  -moz-transform:translateX(0);
-	  transform:translateX(0);
-	}
-	[ui-view].ng-leave-active { 
-	  -webkit-transform:translateX(-100%);
-	  -moz-transform:translateX(-100%);
-	  transform:translateX(-100%);
-	}
+	[ui-view].ng-enter { left: 100%; }
+	[ui-view].ng-enter-active{ @include slide-transform(-100%)}
+	[ui-view].ng-leave { @include slide-transform(0)}
+	[ui-view].ng-leave-active { @include slide-transform(-100%)}
 }
 /* animations end*/

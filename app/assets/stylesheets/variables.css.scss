@@ -1,3 +1,15 @@
 $player-width: 67px;
 $slider-clmn-width: 30px;
 $vertical-text-padding: 83px;
+
+@mixin slide-transform($length){
+	-webkit-transform:translateX($length);
+  	-moz-transform:translateX($length);
+  	transform:translateX($length);
+}
+@mixin slide-transition($time,$style){
+	-webkit-transition:all $time,$style;
+	-moz-transition:all $time,$style;
+	-o-transition:all $time,$style;
+	transition:all $time,$style;
+}

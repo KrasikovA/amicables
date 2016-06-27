@@ -15,6 +15,7 @@
 			cursor: pointer;
 			p{
 				font-size: 18px;
+				line-height: 18px;
 				color: white;
 				text-align: center;
 				margin: 0;
@@ -22,6 +23,7 @@
 			}
 		}
 	}
+	.clmn.slideRight{ @include slide-transform(100%)}
 	.clmn:nth-child(1){
 		left: 0;
 		right: $slider-clmn-width * 3;
@@ -33,29 +35,9 @@
 	.clmn:nth-child(3){
 		left: $slider-clmn-width * 2;
 		right: $slider-clmn-width;
-
-	}
-	.clmn.slideRight{
-		-webkit-transform:translateX(100%);
-	    -moz-transform:translateX(100%);
-	    transform:translateX(100%);
-	    animation-delay: .5s;
-	}
-	.clmn.slideLeft{
-		animation: slideLeft .5s ease-in-out;
-	}
-	.slide{
-		height: 100%;
-		width: 80%;
-		top: 0;
 	}
 
 }
 #root:not(.noAnimation){
-	.clmn.slideRight, .clmn.slideLeft{
-	  -webkit-transition:all .5s ease-in-out;
-	  -moz-transition:all .5s ease-in-out;
-	  -o-transition:all .5s ease-in-out;
-	  transition:all .5s ease-in-out;
-	}
+	.clmn.slideRight, .clmn.slideLeft{ @include slide-transition(.5s,ease-in-out)}
 }
