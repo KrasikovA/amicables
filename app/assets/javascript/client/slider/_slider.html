@@ -1,7 +1,9 @@
 <div ng-repeat="slide in slider.slides"
-    ng-click="slider.selectSlide(slide)"
     ng-class="{slideRight: slide.slideRight,slideLeft: slide.slideLeft}"
-    class="clmn"><p ng-repeat="letter in slide.heading track by $index">{{letter}}</p>
+    class="clmn">
+    <div class="letter-limiter" ng-click="slider.selectSlide(slide)">
+    	<p ng-repeat="letter in slide.heading track by $index">{{letter}}</p>
+    </div>
 </div>
 <ng-transclude>
 </ng-transclude>

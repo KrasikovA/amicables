@@ -1,9 +1,10 @@
+@import "variables";
 [player]{
 	height: 100%;
-	width: 67px;
+	width: $player-width;
 	float: right;
 	background-color: rgba(0,0,0,0.5);
-	padding-top: 83px;
+	padding-top: $vertical-text-padding;
 	z-index: 1000;
 	p{
 		color: white;

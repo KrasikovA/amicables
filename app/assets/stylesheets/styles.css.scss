@@ -16,27 +16,15 @@ body, html{
 *{
 	font-family: "BPtypewrite"
 }
-ul{
-	-webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    -webkit-padding-start: 0;
-}
 
 #root{
 	position: relative;
-	.nav-view-limiter{
+	[ui-view]{
 		width: auto;
 		height: 100%;
+		margin-left: 90px;
+		margin-right: 157px;
 		overflow: hidden;
-		[ui-view]{
-			width: auto;
-			height: 100%;
-			margin-left: 90px;
-			margin-right: 90px;
-			overflow: hidden;
-		}
 	}
 }
 .mainBack{
@@ -45,7 +33,7 @@ ul{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: -1;
+	z-index: -1000;
 } 
 
 /* animations start*/

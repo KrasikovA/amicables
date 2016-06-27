@@ -1,37 +1,39 @@
+@import "variables";
 .slider{
-	height: 100%;
 	position: absolute;
 	overflow: hidden;
-	right: 67px;
+	right: $player-width;
 	left: 0;
+	height: 100%;
 	.clmn{
 		position: absolute;
-		color: white;
-		cursor: pointer;
-		vertical-align: top;
-		float: left;
-		padding-top: 83px;
-		display: inline-block;
+		padding-top: $vertical-text-padding;
 		height: 100%; 
-		right: 0;
-		p{
-			font-size: 18px;
-			color: white;
-			text-align: left;
-			margin: 0;
+		.letter-limiter{
+			width: $slider-clmn-width;
+			height: 100%;
+			cursor: pointer;
+			p{
+				font-size: 18px;
+				color: white;
+				text-align: center;
+				margin: 0;
+				width: 100%;
+			}
 		}
 	}
 	.clmn:nth-child(1){
-		left: 10px;
-		right: 70px;
+		left: 0;
+		right: $slider-clmn-width * 3;
 	}
 	.clmn:nth-child(2){
-		left: 40px;
-		right: 40px;
+		left: $slider-clmn-width;
+		right: $slider-clmn-width * 2;
 	}
 	.clmn:nth-child(3){
-		left: 70px;
-		right: 10px;
+		left: $slider-clmn-width * 2;
+		right: $slider-clmn-width;
+
 	}
 	.clmn.slideRight{
 		-webkit-transform:translateX(100%);
@@ -47,6 +49,7 @@
 		width: 80%;
 		top: 0;
 	}
+
 }
 #root:not(.noAnimation){
 	.clmn.slideRight, .clmn.slideLeft{
