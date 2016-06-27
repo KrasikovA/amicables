@@ -1,5 +1,5 @@
 <img ng-src="{{releases.releasesBack}}" class="mainBack">
-<div class="releases">
+<div id="releases-page" class="page">
 	<ul>
 		<li ng-repeat="band in releases.bands">
 			{{band.name}}
@@ -22,7 +22,6 @@
 								        <vg-mute-button></vg-mute-button>
 								    </vg-volume>
 								</vg-controls>
-
 							</videogular>	
 						</div>
 						
