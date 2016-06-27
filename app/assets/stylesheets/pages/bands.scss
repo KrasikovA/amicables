@@ -2,4 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #bands-page{
+	.left-column{
+		display: inline-block;
+		height: 100%;
+		float: left;
+		width: 30%;
+		ul{
+			list-style: none;
+			li {
+				text-decoration: underline;
+				color: white;
+			}
+		}
+	}
+	.right-column{
+		display: inline-block;
+		height: 100%;
+		width: 70%;
+	}
 }

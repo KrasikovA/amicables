@@ -11,7 +11,7 @@ function($scope, $stateParams, slides,leaf,bands,bandsBack,$http){
 	leaf.navigate('bands',slides.slidesList)
 	self.bandsList = bands;
 	self.bandsBack = bandsBack.image_url;
-	self.onClick = function(id){
+	self.selectBand = function(id){
 		self.activeBand = id;
 	}
 }])

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324170713) do
+ActiveRecord::Schema.define(version: 20160627212819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(version: 20160324170713) do
     t.text     "description"
   end
 
+  create_table "bands_releases", id: false, force: :cascade do |t|
+    t.integer "release_id", null: false
+    t.integer "band_id",    null: false
+  end
+
+  add_index "bands_releases", ["band_id", "release_id"], name: "index_bands_releases_on_band_id_and_release_id", using: :btree
+  add_index "bands_releases", ["release_id", "band_id"], name: "index_bands_releases_on_release_id_and_band_id", using: :btree
+
   create_table "release_images", force: :cascade do |t|
     t.integer  "release_id"
     t.datetime "created_at",         null: false
@@ -65,7 +73,6 @@ ActiveRecord::Schema.define(version: 20160324170713) do
 
   create_table "releases", force: :cascade do |t|
     t.string   "name"
-    t.integer  "band_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "description"
@@ -87,6 +94,8 @@ ActiveRecord::Schema.define(version: 20160324170713) do
   add_index "tracks", ["release_id"], name: "index_tracks_on_release_id", using: :btree
 
   add_foreign_key "band_images", "bands"
+  add_foreign_key "bands_releases", "bands"
+  add_foreign_key "bands_releases", "releases"
   add_foreign_key "release_images", "releases"
   add_foreign_key "tracks", "releases"
 end

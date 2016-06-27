@@ -1,9 +1,12 @@
 <img ng-src="{{bands.bandsBack}}" class="mainBack">
 <div id="bands-page" class="page">
-	<ul>
-		<li ng-repeat="band in bands.bandsList">
-			<a href="" ng-click="bands.onClick(band.id)">{{band.name}}</a> - {{band.description}}
-		</li>
-	</ul>
-	<div photo-slider bandId="{{bands.activeBand}}"></div>
+	<aside class="left-column">
+		<ul>
+			<li ng-repeat="band in bands.bandsList" ng-click="bands.selectBand(band.id)">
+				{{band.name}}
+			</li>
+		</ul>
+	</aside><article class="right-column">
+		<div photo-slider bandId={{bands.activeBand}}></div>
+	</article>
 </div>
