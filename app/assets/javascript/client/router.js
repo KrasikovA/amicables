@@ -2,8 +2,9 @@ angular.module('app')
 .config([
 '$stateProvider',
 '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider) {
+function($stateProvider, $urlRouterProvider,$stateParams) {
   $stateProvider
+    //home
     .state('home', {
       url: '/home',
       templateUrl: 'client/home/_home.html',
@@ -19,6 +20,7 @@ function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    //about
     .state('about', {
       url: '/about',
       controllerAs: 'about',
@@ -41,6 +43,7 @@ function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    //bands
     .state('bands', {
       resolve: {
         bands: function($q,$http){
@@ -58,11 +61,32 @@ function($stateProvider, $urlRouterProvider) {
           })
         }
       },
-      controllerAs: 'bands',
       url: '/bands',
+      controllerAs: 'bands',
       templateUrl: 'client/bands/_bands.html',
       controller: 'BandsCtrl'
     })
+    //bands list
+    .state('bands.list',{
+      resolve: {
+        currentBand: function($q,$http,$stateParams){
+            return $q(function(resolve,reject){
+              $http.get('/api/bands/'+ $stateParams.bandId +'.json').success(function(data){
+                resolve(data)
+              })  
+            })
+         }
+      },
+      url: '/{bandId:[0-9]{1,4}}',
+      views: {
+        bandsList: {
+          templateUrl: 'client/bands/_bands.list.html',
+          controller: 'BandsList',
+          controllerAs: "bandsList"
+        }
+      }
+    })
+    //releases
     .state('releases', {
       controllerAs: 'releases',
       url: '/releases',

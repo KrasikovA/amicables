@@ -1,5 +1,9 @@
 class Api::BandsController < ApplicationController
 	respond_to :json
+	def show
+		band = Band.find(params[:id])
+		respond_with band.to_json(except: [ :created_at,:updated_at])
+	end
 	def back
 		aboutBack = BackImage.find_by(name: 'bands')
 		respond_with aboutBack.to_json(methods: :image_url,only: :image_url)

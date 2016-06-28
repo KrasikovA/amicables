@@ -27,14 +27,17 @@
 	.clmn:nth-child(1){
 		left: 0;
 		right: $slider-clmn-width * 3;
+		//background-color: red;
 	}
 	.clmn:nth-child(2){
 		left: $slider-clmn-width;
 		right: $slider-clmn-width * 2;
+		//background-color: green;
 	}
 	.clmn:nth-child(3){
 		left: $slider-clmn-width * 2;
 		right: $slider-clmn-width;
+		//background-color: blue;
 	}
 
 }

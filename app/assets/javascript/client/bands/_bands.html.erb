@@ -2,11 +2,11 @@
 <div id="bands-page" class="page">
 	<aside class="left-column">
 		<ul>
-			<li ng-repeat="band in bands.bandsList" ng-click="bands.selectBand(band.id)">
+			<li ng-repeat="band in bands.bandsList" ui-sref="bands.list({bandId:band.id})">
 				{{band.name}}
 			</li>
 		</ul>
 	</aside><article class="right-column">
-		<div photo-slider bandId={{bands.activeBand}}></div>
+		<div ui-view="bandsList"></div>
 	</article>
 </div>

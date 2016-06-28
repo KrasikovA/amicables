@@ -12,6 +12,9 @@
 			li {
 				text-decoration: underline;
 				color: white;
+				font-size: 15px;
+				line-height: 15px;
+				margin-bottom: 15px;
 			}
 		}
 	}
@@ -19,5 +22,12 @@
 		display: inline-block;
 		height: 100%;
 		width: 70%;
+		color: white;
+		h1::first-letter{
+			text-transform: capitalize;
+		}
+		p{
+			line-height: 20px;
+		}
 	}
 }
