@@ -7,19 +7,10 @@ angular.module('app')
     		transclude: true,
     		templateUrl: 'client/photoSlider/_photoSlider.html',
     		scope: {
-    		    bandId: '@'
+    		    images: '='
     		},
     		link: function(scope, elem, attr,sliderCtrl) {
 				scope.currentIndex = 0;
-				attr.$observe('bandid',function(newBandId){
-					if (newBandId.length > 0){
-						$http
-							.get('/api/bands/' + newBandId + '/images.json')
-								.then(function(data){
-									scope.images = data.data;
-								})
-					}
-				})
 		        scope.setCurrentSlideIndex = function (index) {
 		            scope.currentIndex = index;
 		        };

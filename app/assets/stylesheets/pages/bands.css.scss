@@ -1,6 +1,7 @@
 // Place all the styles related to the bands controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
 #bands-page{
 	.left-column{
 		display: inline-block;
@@ -9,14 +10,19 @@
 		width: 30%;
 		ul{
 			list-style: none;
+			margin-top: $cntnt-vertical-text-padding;
 			li {
 				text-decoration: underline;
 				color: white;
 				font-size: 15px;
 				line-height: 15px;
 				margin-bottom: 15px;
+				cursor: pointer;
 			}
 		}
+	}
+	.red{
+		background-color: red;
 	}
 	.right-column{
 		display: inline-block;

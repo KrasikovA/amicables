@@ -5,8 +5,8 @@ angular.module('app')
 			$rootScope.$on('$stateChangeStart', 
 			function(event, toState, toParams, fromState, fromParams, options){ 
 				var slidesList = slides.slidesList,
-					toStateIndex = slidesList.indexOf(slidesList.find(function(slide){return slide.page === toState.name})),
-					fromStateIndex = slidesList.indexOf(slidesList.find(function(slide){return slide.page === fromState.name}));
+					toStateIndex = slidesList.indexOf(slidesList.find(function(slide){return slide.page === toState.name.match(/[^.]*/)[0]})),
+					fromStateIndex = slidesList.indexOf(slidesList.find(function(slide){return slide.page === fromState.name.match(/[^.]*/)[0]}));
 				if (toState.name == 'home' || (Math.abs(fromStateIndex) < toStateIndex) && fromStateIndex != -1){
 					elem.addClass("slideLeft")
 					elem.removeClass("noAnimation")

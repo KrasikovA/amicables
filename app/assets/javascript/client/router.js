@@ -75,6 +75,13 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
                 resolve(data)
               })  
             })
+         },
+         currentBandImages: function($q,$http,$stateParams){
+            return $q(function(resolve,reject){
+              $http.get('/api/bands/'+ $stateParams.bandId +'/images.json').success(function(data){
+                resolve(data)
+              })  
+            })
          }
       },
       url: '/{bandId:[0-9]{1,4}}',

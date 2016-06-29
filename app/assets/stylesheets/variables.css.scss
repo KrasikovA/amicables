@@ -1,7 +1,7 @@
 $player-width: 67px;
 $slider-clmn-width: 30px;
-$vertical-text-padding: 83px;
-
+$ctrl-vertical-text-padding: 83px;
+$cntnt-vertical-text-padding: 63px;
 @mixin slide-transform($length){
 	-webkit-transform:translateX($length);
   	-moz-transform:translateX($length);
