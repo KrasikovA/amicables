@@ -30,26 +30,26 @@ jack_the_knife = Band.create(
 
 BandImage.create(
 	[
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat.png"),band: eyrie},
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat2.jpg"),band: eyrie}
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest1.jpg"),band: eyrie},
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest2.jpg"),band: eyrie}
 	]
 )
 BandImage.create(
 	[
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat.png"),band: awaara},
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat2.jpg"),band: awaara}
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest1.jpg"),band: awaara},
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest2.jpg"),band: awaara}
 	]
 )
 BandImage.create(
 	[
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat.png"),band: haunted},
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat2.jpg"),band: haunted}
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest1.jpg"),band: haunted},
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest2.jpg"),band: haunted}
 	]
 )
 BandImage.create(
 	[
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat.png"),band: jack_the_knife},
-		{image: File.new("#{Rails.root}/app/assets/images/sad_cat2.jpg"),band: jack_the_knife}
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest1.jpg"),band: jack_the_knife},
+		{image: File.new("#{Rails.root}/app/assets/images/rainy_forest2.jpg"),band: jack_the_knife}
 	]
 )
 

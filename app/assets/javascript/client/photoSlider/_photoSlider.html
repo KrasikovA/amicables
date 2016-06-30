@@ -2,6 +2,8 @@
 	<div class="photo-container">
 		<img ng-repeat="image in images" ng-hide="!isCurrentSlideIndex($index)" ng-src="{{image.image_url}}"></img>
 	</div>
-	<div class="photoButton left" ng-click="prevImage()"></div>
-	<div class="photoButton right" ng-click="nextImage()"></div>
+	<div class="photo-cntls">
+		<div class="photo-button left" ng-click="prevImage()"></div>
+		<div class="photo-button right" ng-click="nextImage()"></div>
+	</div>
 </div>

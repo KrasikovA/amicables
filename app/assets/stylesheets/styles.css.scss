@@ -38,7 +38,8 @@ body, html{
 		margin: 0;
 		z-index: -1;
 		.page{
-			padding-left: $slider-clmn-width * 3;
+			margin-left: $slider-clmn-width * 3;
+			margin-right: $slider-clmn-width * 3 + $player-width;
 		}
 	}
 }

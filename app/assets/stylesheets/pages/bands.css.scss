@@ -10,19 +10,32 @@
 		width: 30%;
 		ul{
 			list-style: none;
+			margin: 0;
+			padding: 0;
 			margin-top: $cntnt-vertical-text-padding;
 			li {
-				text-decoration: underline;
+				position: relative;
 				color: white;
 				font-size: 15px;
-				line-height: 15px;
 				margin-bottom: 15px;
+				line-height: 22px;
 				cursor: pointer;
+				p{
+					display: inline-block;
+					margin: 0;
+					text-decoration: underline;
+					padding-left: 5px;
+					padding-right: 5px;
+					span{
+						vertical-align: middle;
+					}
+				}
+				p.band-selected{
+					background: #424242;
+					text-decoration: none;
+				}
 			}
 		}
-	}
-	.red{
-		background-color: red;
 	}
 	.right-column{
 		display: inline-block;

@@ -2,7 +2,7 @@ angular.module('app')
 .controller('HomeCtrl',['$scope',
 '$stateParams',
 'slides',
-'background',
+'homeBack',
 'leaf',
 'homeBack',
 function($scope, $stateParams, slides,background,leaf,homeBack){
