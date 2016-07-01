@@ -1,2 +1,18 @@
-#about{
+@import 'variables';
+#about-page{
+	hr{
+		position: relative;
+		width: 30%;
+		text-align:left; 
+		margin: 0 auto 40px 0;
+	}
+	line-height: 18px;
+	font-size: 15px;
+	padding-top: $cntnt-vertical-text-padding;
+	position: relative;
+	float: right;
+	right: 100px;
+	color: white;
+	height: 100%;
+	width: 270px;
 }

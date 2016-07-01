@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:KrasikovA/amicables.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deployer/apps/amicables'
-server '192.168.1.71', user: 'deployer'
+server '95.165.156.168', user: 'deployer'
 set :keep_releases, 2
 set :rvm_type, :user   
 set :rvm_ruby_version, '2.2.3'
@@ -42,8 +42,8 @@ set :default_env, {
 namespace :deploy do
   task :reboot do
     on roles(:all) do
-      #unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
-      #execute :kill, "#{unicorn_pid}"
+      unicorn_pid = capture "cat /home/deployer/apps/amicables/run/unicorn.pid"
+      execute :kill, "#{unicorn_pid}"
       within release_path do
         execute :bundle,"install --without development test"
         execute :rake, "assets:precompile"

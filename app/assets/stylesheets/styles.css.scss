@@ -19,6 +19,16 @@ body, html{
 		overflow: hidden;
 	}
 }
+.darker{
+	right: $player-width;
+	min-height: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -999;
+	opacity: .7;
+	background-color: black;
+}
 .mainBack{
 	min-width: 100%;
 	min-height: 100%;

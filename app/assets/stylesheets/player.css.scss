@@ -16,4 +16,17 @@
 	.homeLink{
 		cursor: pointer;
 	}
+	.play-button{
+		border-radius: 50%;
+		position: relative;
+		margin: 20px auto;
+		height: 23px;
+		width: 23px;
+		background-color: #636363;
+		text-align: center;
+		background-image: image-url("play_button.svg");
+		background-repeat: no-repeat;
+		background-position: center center;
+		cursor: pointer;
+	}
 }
