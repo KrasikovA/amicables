@@ -1,9 +1,8 @@
 @import 'variables';
 .photo-slider{
-	margin-top: $cntnt-vertical-text-padding;
 	background-color: white;
-	width: 520px;
-	height: 384px;
+	width: 100%;
+	height: $photo-slider-height;
 	overflow: hidden;
 	.photo-container{
 		text-align: center;

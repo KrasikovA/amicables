@@ -17,7 +17,7 @@
 				position: relative;
 				color: white;
 				font-size: 15px;
-				margin-bottom: 15px;
+				margin-bottom: 7px;
 				line-height: 22px;
 				cursor: pointer;
 				p{
@@ -42,11 +42,19 @@
 		height: 100%;
 		width: 70%;
 		color: white;
-		h1::first-letter{
-			text-transform: capitalize;
+		.band-limiter{
+			position: relative;
+			margin: 0 auto;
+			width: $photo-slider-width;
+			height: 100%;
+			padding-top: $cntnt-vertical-text-padding;
+			h1::first-letter{
+				text-transform: capitalize;
+			}
+			p{
+				line-height: 20px;
+			}
 		}
-		p{
-			line-height: 20px;
-		}
+		
 	}
 }

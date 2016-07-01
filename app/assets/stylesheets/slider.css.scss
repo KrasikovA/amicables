@@ -7,10 +7,10 @@
 	height: 100%;
 	.clmn{
 		position: absolute;
-		padding-top: $ctrl-vertical-text-padding;
 		height: 100%; 
 		.letter-limiter{
 			width: $slider-clmn-width;
+			padding-top: $ctrl-vertical-text-padding;
 			height: 100%;
 			cursor: pointer;
 			p{
@@ -27,17 +27,26 @@
 	.clmn:nth-child(1){
 		left: 0;
 		right: $slider-clmn-width * 3;
-		//background-color: red;
+		.letter-limiter{
+			background-color: black;
+			background-image: image-url("pattern1.svg");
+		}
 	}
 	.clmn:nth-child(2){
 		left: $slider-clmn-width;
 		right: $slider-clmn-width * 2;
-		//background-color: green;
+		.letter-limiter{
+			background-color: black;
+			background-image: image-url("pattern2.svg");
+		}
 	}
 	.clmn:nth-child(3){
 		left: $slider-clmn-width * 2;
 		right: $slider-clmn-width;
-		//background-color: blue;
+		.letter-limiter{
+			background-color: black;
+			background-image: image-url("pattern3.svg");
+		}
 	}
 
 }

@@ -11,7 +11,7 @@ body, html{
 }
 #root{
 	position: relative;
-	#main-view{
+	.main-view{
 		width: auto;
 		height: 100%;
 		margin-left: $slider-clmn-width * 3;
@@ -30,7 +30,7 @@ body, html{
 
 /* animations start*/
 #root:not(.noAnimation){
-	#main-view.ng-enter, #main-view.ng-leave {
+	.main-view.ng-enter, .main-view.ng-leave {
 		@include slide-transition(.5s,ease-in-out);
 		position: absolute;
 		width: 100%;
@@ -44,15 +44,15 @@ body, html{
 	}
 }
 /* slide right*/
-#main-view.ng-enter{ left: -100%; }
-#main-view.ng-enter-active { @include slide-transform(100%); }
-#main-view.ng-leave { @include slide-transform(0); }
-#main-view.ng-leave-active { @include slide-transform(100%); }	
+.main-view.ng-enter{ left: -100%; }
+.main-view.ng-enter-active { @include slide-transform(100%); }
+.main-view.ng-leave { @include slide-transform(0); }
+.main-view.ng-leave-active { @include slide-transform(100%); }	
 /* slide left*/
 .slideLeft{
-	#main-view.ng-enter { left: 100%; }
-	#main-view.ng-enter-active{ @include slide-transform(-100%)}
-	#main-view.ng-leave { @include slide-transform(0)}
-	#main-view.ng-leave-active { @include slide-transform(-100%)}
+	.main-view.ng-enter { left: 100%; }
+	.main-view.ng-enter-active{ @include slide-transform(-100%)}
+	.main-view.ng-leave { @include slide-transform(0)}
+	.main-view.ng-leave-active { @include slide-transform(-100%)}
 }
 /* animations end*/
