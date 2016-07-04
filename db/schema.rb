@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20160627212819) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "albums", id: false, force: :cascade do |t|
+    t.integer "release_id", null: false
+    t.integer "band_id",    null: false
+  end
+
+  add_index "albums", ["band_id", "release_id"], name: "index_albums_on_band_id_and_release_id", using: :btree
+  add_index "albums", ["release_id", "band_id"], name: "index_albums_on_release_id_and_band_id", using: :btree
+
   create_table "back_images", force: :cascade do |t|
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -50,14 +58,6 @@ ActiveRecord::Schema.define(version: 20160627212819) do
     t.datetime "updated_at",  null: false
     t.text     "description"
   end
-
-  create_table "bands_releases", id: false, force: :cascade do |t|
-    t.integer "release_id", null: false
-    t.integer "band_id",    null: false
-  end
-
-  add_index "bands_releases", ["band_id", "release_id"], name: "index_bands_releases_on_band_id_and_release_id", using: :btree
-  add_index "bands_releases", ["release_id", "band_id"], name: "index_bands_releases_on_release_id_and_band_id", using: :btree
 
   create_table "release_images", force: :cascade do |t|
     t.integer  "release_id"
@@ -93,9 +93,9 @@ ActiveRecord::Schema.define(version: 20160627212819) do
 
   add_index "tracks", ["release_id"], name: "index_tracks_on_release_id", using: :btree
 
+  add_foreign_key "albums", "bands"
+  add_foreign_key "albums", "releases"
   add_foreign_key "band_images", "bands"
-  add_foreign_key "bands_releases", "bands"
-  add_foreign_key "bands_releases", "releases"
   add_foreign_key "release_images", "releases"
   add_foreign_key "tracks", "releases"
 end

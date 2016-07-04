@@ -1,4 +1,15 @@
 <img ng-src="{{releases.releasesBack}}" class="mainBack">
 <div class="darker"></div>
 <div id="releases-page" class="page">
+	<aside class="left-column">
+		<ul>
+			<li ng-repeat="release in releases.releasesList">
+				<p>
+					<span>{{release.comp_name}}</span>
+				</p>
+			</li>
+		</ul>
+	</aside><article class="right-column ">
+		<!-- <div class="band-limiter" ui-view="bandsList"></div> -->
+	</article>
 </div>

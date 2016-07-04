@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'bands/:id', to: 'bands#show'
     ##
     ##releases
-    get 'releases', to: 'bands#all_with_releases'
+    get 'releases', to: 'releases#all'
     get 'releases/back', to: 'releases#back'
     get 'releases/:id/images', to: 'releases#images'
     ##

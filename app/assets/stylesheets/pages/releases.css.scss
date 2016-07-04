@@ -1,2 +1,4 @@
-#releasesPage{
+@import 'variables';
+#releases-page{
+	@include active-list;
 }

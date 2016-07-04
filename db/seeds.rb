@@ -53,3 +53,14 @@ BandImage.create(
 	]
 )
 
+eyrie_release = Release.create(name: 'Untitled', description: 'as ever, everything went just not like we wanted. could not help it')
+eyrie_demo = Release.create(name: "Demo", description: "eyrie demo demo demo demo")
+jack_haunted_release =  Release.create(name: '',description: "4 synth punk pieces from moscow & 2 garage pop + 2 synth punk/pop tracks from saint-petersburg bring you simplicity and purity that can be found only in stuff that was never meant to be heard. long live bedroom recordings! issued in Haunted's old jeans with glued-on pictures. don't miss one.")
+awaara_release = Release.create(name: "the one and only posthumous album. 3 songs and 4 instrumental tracks of punk and love.issued in printed fabric bags with 40 cm high folded inserts of band pictures and photos of karjala & a few with 22x15cm printed fabric inserts, watercoloured inner cardboard sleeves, hand-written tracklist and labels.")
+Album.create(band_id: eyrie.id,release_id: eyrie_demo.id)
+Album.create(band_id: eyrie.id, release_id: eyrie_release.id)
+Album.create(band_id: jack_the_knife.id, release_id: jack_haunted_release.id)
+Album.create(band_id: haunted.id, release_id: jack_haunted_release.id)
+Album.create(band_id: awaara.id,release_id: awaara_release.id)
+
+
