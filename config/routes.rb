@@ -8,13 +8,12 @@ Rails.application.routes.draw do
     ##bands
     get 'bands', to: 'bands#all'
     get 'bands/back', to: 'bands#back'
-    get 'bands/:id/images', to: 'bands#images'
     get 'bands/:id', to: 'bands#show'
     ##
     ##releases
     get 'releases', to: 'releases#all'
     get 'releases/back', to: 'releases#back'
-    get 'releases/:id/images', to: 'releases#images'
+    get 'releases/:comp_name', to: "releases#show"
     ##
     ##about
     get 'about/description', to: 'about#description'

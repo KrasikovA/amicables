@@ -75,13 +75,6 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
                 resolve(data)
               })  
             })
-         },
-         currentBandImages: function($q,$http,$stateParams){
-            return $q(function(resolve,reject){
-              $http.get('/api/bands/'+ $stateParams.bandId +'/images.json').success(function(data){
-                resolve(data)
-              })  
-            })
          }
       },
       url: '/{bandId:[0-9]{1,4}}',
@@ -115,7 +108,28 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
           })
         }
       }
-    });
+    })
+    //releases current
+    .state('releases.current',{
+      resolve: {
+        currentBand: function($q,$http,$stateParams){
+            return $q(function(resolve,reject){
+              $http.get('/api/releases/'+ $stateParams.comp_name +'.json').success(function(data){
+                resolve(data)
+              })  
+            })
+         }
+      },
+      url: '/{comp_name:.*}',
+      views: {
+        releaseCurrent: {
+          templateUrl: 'client/releases/_releases.current.html',
+          controller: 'ReleaseCurrent',
+          controllerAs: "releaseCurrent"
+        }
+      }
+    })
+
 
   $urlRouterProvider.otherwise('home');
 }])

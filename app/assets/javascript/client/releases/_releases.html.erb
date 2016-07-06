@@ -3,13 +3,13 @@
 <div id="releases-page" class="page">
 	<aside class="left-column">
 		<ul>
-			<li ng-repeat="release in releases.releasesList">
+			<li ng-repeat="release in releases.releasesList" ui-sref="releases.current({comp_name: release.comp_url_name})">
 				<p>
 					<span>{{release.comp_name}}</span>
 				</p>
 			</li>
 		</ul>
 	</aside><article class="right-column ">
-		<!-- <div class="band-limiter" ui-view="bandsList"></div> -->
+		<div ui-view="releasesCurrent"></div>
 	</article>
 </div>

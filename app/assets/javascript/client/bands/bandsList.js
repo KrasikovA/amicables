@@ -2,11 +2,10 @@ angular.module('app')
 .controller('BandsList',['$scope',
 '$stateParams',
 'currentBand',
-'currentBandImages',
 'controllerBridge',
-function($scope, $stateParams,currentBand,currentBandImages,controllerBridge){
+function($scope, $stateParams,currentBand,controllerBridge){
 	var self = this;
 	controllerBridge.value = $stateParams.bandId;
-	$scope.currentBandImages = currentBandImages;
+	$scope.currentBandImages = currentBand.band_images;
 	self.currentBand = currentBand;
 }])

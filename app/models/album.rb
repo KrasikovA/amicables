@@ -18,6 +18,7 @@ class Album < ActiveRecord::Base
 		response_arr = response.to_a
 		response_arr.each do |album|
 			album["releases"] = album["releases"].split(",").map(&:to_i)
+			album["comp_url_name"] = album["comp_name"].gsub(/ /,'_').gsub(/\//,'-')
 		end
 		response_arr
 	end

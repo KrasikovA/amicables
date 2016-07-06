@@ -9,8 +9,9 @@ class Api::ReleasesController < ApplicationController
 		respond_with Album.all.to_json
 	end
 
-	def images
-		release = Release.find(params[:id])
-		respond_with release.release_images.to_json(methods: :image_url,only: :image_url)
+	def show
+		p params[:comp_name]
+		respond_with {}.to_json
 	end
+
 end
