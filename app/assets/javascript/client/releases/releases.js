@@ -11,5 +11,4 @@ function($scope, $stateParams, slides,leaf,releasesBack,releases,$sce){
 	self.releasesList = releases;
 	self.releasesBack = releasesBack.image_url;
 	leaf.navigate('releases',slides.slidesList);
-	console.log(releases)
 }])

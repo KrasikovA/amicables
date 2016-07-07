@@ -6,12 +6,12 @@ class Api::ReleasesController < ApplicationController
 	end
 
 	def all
-		respond_with Album.all.to_json
+		respond_with Album.band_names.to_json
 	end
 
 	def show
-		p params[:comp_name]
-		respond_with {}.to_json
+		releases = Release.find_by_comp_band_name(params[:comp_name])
+		respond_with releases.to_json(include: [:release_images,:tracks])
 	end
 
 end

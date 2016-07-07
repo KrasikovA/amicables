@@ -122,9 +122,9 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
       },
       url: '/{comp_name:.*}',
       views: {
-        releaseCurrent: {
+        releasesCurrent: {
           templateUrl: 'client/releases/_releases.current.html',
-          controller: 'ReleaseCurrent',
+          controller: 'ReleasesCurrentCtrl',
           controllerAs: "releaseCurrent"
         }
       }

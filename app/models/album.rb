@@ -1,7 +1,7 @@
 class Album < ActiveRecord::Base
-	belongs_to :bands
-	belongs_to :releases
-	def self.all
+	belongs_to :band
+	belongs_to :release
+	def self.band_names
 		query = <<-SQL
 		select comp_name, array_to_string(array_agg(release_id),',') as releases from 
 			(

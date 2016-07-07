@@ -7,4 +7,9 @@ class Band < ActiveRecord::Base
 	def images
 		@images = band_images
 	end
+	def self.comp_name_ids(comp_name)
+		names = comp_name.gsub('_',' ').split('-')
+		query = unscoped.where(name: names)
+		self.select(:id).where(query.where_values.inject(:or)).map(&:id)
+	end
 end
