@@ -7,6 +7,6 @@ class Release < ActiveRecord::Base
 	accepts_nested_attributes_for :tracks
 	def self.find_by_comp_band_name(comp_name)
 		band_ids = Band.comp_name_ids(comp_name)
-		Release.joins(:albums).where('albums.band_id in (?)',band_ids)
+		Release.joins(:albums).where('albums.band_id in (?)',band_ids).distinct
 	end
 end
