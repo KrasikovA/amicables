@@ -11,7 +11,17 @@ class Api::ReleasesController < ApplicationController
 
 	def show
 		releases = Release.find_by_comp_band_name(params[:comp_name])
-		respond_with releases.to_json(include: [:release_images,:tracks])
+		respond_with releases.to_json(
+			include: {
+				release_images: {
+					methods: :image_url,
+					only: :image_url
+				},
+				tracks: {
+					methods: :song_url,
+					only: :song_url
+				}
+			})
 	end
 
 end

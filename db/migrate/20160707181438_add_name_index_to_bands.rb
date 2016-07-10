@@ -1,13 +1,13 @@
 class AddNameIndexToBands < ActiveRecord::Migration
-  	def up
+  def up
 		execute %{
-			CREATE UNIQUE INDEX 
+			CREATE UNIQUE INDEX
 				bands_name
 			ON
 				bands (lower(name) varchar_pattern_ops)
 		}
 	end
-	def down 
-		remove_index :bands,name: "releases_name"
+	def down
+		remove_index :bands,name: "bands_name"
 	end
 end

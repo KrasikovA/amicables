@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     ##bands
     get 'bands', to: 'bands#all'
     get 'bands/back', to: 'bands#back'
-    get 'bands/:id', to: 'bands#show'
+    get 'bands/:name', to: 'bands#show'
     ##
     ##releases
     get 'releases', to: 'releases#all'

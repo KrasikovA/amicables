@@ -1,3 +1,4 @@
+# TODO: добавить колбек создающий поле с юрл
 class Release < ActiveRecord::Base
 	has_many :albums
 	has_many :bands, through: :albums

@@ -1,4 +1,25 @@
 @import 'variables';
-#releases-page{
+.releases-page{
+	height: 100%;
 	@include active-list;
+	.right-column{
+		width: 70%;
+		float: left;
+		height: 100%;
+		[ui-view="releasesCurrent"]{
+			height: 100%;
+			.left-column{
+				width: 50%;
+				float: left;
+			}
+			.right-column{
+				width: 50%;
+				float: left;
+			}
+			.post-scriptium{
+				width: 100%;
+				float: left;
+			}
+		}
+	}
 }

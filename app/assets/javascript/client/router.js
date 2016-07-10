@@ -31,14 +31,14 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
           return $q(function(resolve,reject){
               $http.get('/api/about/back.json').success(function(data){
                 resolve(data);
-              })  
+              })
             })
         },
         aboutDescription: function($q,$http){
           return $q(function(resolve,reject){
               $http.get('/api/about/description.json').success(function(data){
                 resolve(data);
-              })  
+              })
             })
         }
       }
@@ -50,14 +50,14 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
             return $q(function(resolve,reject){
               $http.get('/api/bands.json').success(function(data){
                 resolve(data)
-              })  
+              })
             })
          },
         bandsBack: function($q, $http){
           return $q(function(resolve,reject){
             $http.get('/api/bands/back.json').success(function(data){
               resolve(data)
-            })  
+            })
           })
         }
       },
@@ -66,23 +66,23 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
       templateUrl: 'client/bands/_bands.html',
       controller: 'BandsCtrl'
     })
-    //bands list
-    .state('bands.list',{
+    //bands current
+    .state('bands.current',{
       resolve: {
         currentBand: function($q,$http,$stateParams){
             return $q(function(resolve,reject){
-              $http.get('/api/bands/'+ $stateParams.bandId +'.json').success(function(data){
+              $http.get('/api/bands/'+ $stateParams.bandName +'.json').success(function(data){
                 resolve(data)
-              })  
+              })
             })
          }
       },
-      url: '/{bandId:[0-9]{1,4}}',
+      url: '/{bandName:.*}',
       views: {
         bandsList: {
-          templateUrl: 'client/bands/_bands.list.html',
-          controller: 'BandsList',
-          controllerAs: "bandsList"
+          templateUrl: 'client/bands/_bands.current.html',
+          controller: 'BandsCurrent',
+          controllerAs: "BandsCurrent"
         }
       }
     })
@@ -97,7 +97,7 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
             return $q(function(resolve,reject){
               $http.get('/api/releases.json').success(function(data){
                 resolve(data)
-              })  
+              })
             })
          },
         releasesBack: function($q,$http){
@@ -116,7 +116,7 @@ function($stateProvider, $urlRouterProvider,$stateParams) {
             return $q(function(resolve,reject){
               $http.get('/api/releases/'+ $stateParams.comp_name +'.json').success(function(data){
                 resolve(data)
-              })  
+              })
             })
          }
       },

@@ -3,7 +3,7 @@
 <div id="bands-page" class="page">
 	<aside class="left-column">
 		<ul>
-			<li ng-repeat="band in bands.bandsList" ui-sref="bands.list({bandId:band.id})">
+			<li ng-repeat="band in bands.bandsList" ui-sref="bands.current({bandName:band.url_name})">
 				<p ng-class="bands.isSelected(band) ? 'band-selected':''">
 					<span>{{band.name}}</span>
 				</p>

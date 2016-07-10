@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('BandsList',['$scope',
+.controller('BandsCurrent',['$scope',
 '$stateParams',
 'currentBand',
 'controllerBridge',
