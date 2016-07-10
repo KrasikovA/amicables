@@ -1,8 +1,13 @@
 <div class="left-column">
-	
+	<div ng-repeat="album in releaseCurrent.albums">
+		<h3>{{album.name}}</h3>
+		<ol>
+			<li ng-repeat="track in album.tracks">{{track.name}}</li>
+		</ol>
+	</div>
 </div><div class="right-column">
-	
+
 </div>
 <div class="post-scriptum">
-	
+
 </div>

@@ -3,6 +3,7 @@ angular.module('app')
 '$stateParams',
 '$sce',
 'currentBand',
-function($scope,$stateParams,$sce,currentBand){
-	console.log(currentBand)
+function($scope,$stateParams,$sce,albums){
+	var self = this;
+	self.albums = albums;
 }])

@@ -1,6 +1,6 @@
 <img ng-src="{{releases.releasesBack}}" class="mainBack">
 <div class="darker"></div>
-<div class="releases-page" class="page">
+<div id="releases-page" class="page">
 	<aside class="left-column">
 		<ul>
 			<li ng-repeat="release in releases.releasesList" ui-sref="releases.current({comp_name: release.comp_url_name})">
@@ -10,6 +10,6 @@
 			</li>
 		</ul>
 	</aside><article class="right-column ">
-		<div ui-view="releasesCurrent"></div>
+		<div ui-view="releasesCurrent" ></div>
 	</article>
 </div>

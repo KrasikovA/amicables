@@ -1,13 +1,21 @@
 @import 'variables';
-.releases-page{
+#releases-page{
 	height: 100%;
+	color: white;
+	font-size: 15px;
 	@include active-list;
 	.right-column{
 		width: 70%;
 		float: left;
 		height: 100%;
+		h3{
+			margin-top: 0;
+			font-size: 21px;
+		}
 		[ui-view="releasesCurrent"]{
+			padding-top: $cntnt-vertical-text-padding;
 			height: 100%;
+			overflow-y: scroll;
 			.left-column{
 				width: 50%;
 				float: left;
