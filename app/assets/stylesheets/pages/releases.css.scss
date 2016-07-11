@@ -9,24 +9,45 @@
 		height: 100%;
 		float: left;
 		overflow-y: scroll;
+		overflow-x: hidden;
 		h3{
 			margin-top: 0;
 			font-size: 21px;
 		}
 		[ui-view="releasesCurrent"]{
-			overflow-y: scroll;
+			overflow-x: hidden;
 			padding-top: $cntnt-vertical-text-padding;
 			.left-column{
 				width: 50%;
 				float: left;
+				li{
+						line-height: 20px;
+						span{
+							float: right;
+						}
+				}
 			}
 			.right-column{
 				width: 50%;
 				float: left;
+				img{
+					width: 219px;
+					height: 219px;
+					float: right;
+				}
 			}
-			.post-scriptium{
+			.post-scriptum{
 				width: 100%;
 				float: left;
+				padding-top: 20px;
+				hr{
+					text-align:left;
+					margin: 0 auto 10px 0;
+					width: 30%;
+				}
+				p{
+					margin-top: 0;
+				}
 			}
 		}
 	}

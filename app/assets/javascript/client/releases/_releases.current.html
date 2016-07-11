@@ -2,7 +2,7 @@
 	<div class="left-column">
 			<h3>{{album.name}}</h3>
 			<ol>
-				<li ng-repeat="track in album.tracks">{{track.title}}</li>
+				<li ng-repeat="track in album.tracks">{{track.title}}<span>{{track.time}}</span></li>
 			</ol>
 	</div><div class="right-column">
 		<img ng-src={{album.release_images[0].image_url}}>
