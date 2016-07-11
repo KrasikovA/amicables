@@ -6,4 +6,5 @@ angular.module('app')
 function($scope,$stateParams,$sce,albums){
 	var self = this;
 	self.albums = albums;
+	console.log(albums)
 }])

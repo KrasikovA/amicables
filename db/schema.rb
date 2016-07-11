@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710121319) do
+ActiveRecord::Schema.define(version: 20160710211124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "about_pages", force: :cascade do |t|
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "description", default: "<hr><p>we decided once that the noise our\n          friends make should be documented. our aim is to produce some\n          special kind of artifacts, not just to pack music up, therefore we\n          focus much on cover art and all to make each thing really unique.\n          available stuff can be purchased at our discogs store. also,\n          everything can (and should) be listened and downloaded for free\n          at our bandcamp.</p>\n          <p>feel free to turn to us with whatever question you have.\n          002197@gmail.com</p><p>cheers from moscow</p>"
+    t.datetime "created_at",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               null: false
+    t.datetime "updated_at",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               null: false
   end
 
   create_table "albums", id: false, force: :cascade do |t|
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 20160710121319) do
   add_index "band_images", ["band_id"], name: "index_band_images_on_band_id", using: :btree
 
   create_table "bands", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",        null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "url_name"
+    t.string   "url_name",    null: false
     t.text     "description"
   end
 
@@ -75,19 +75,19 @@ ActiveRecord::Schema.define(version: 20160710121319) do
   add_index "release_images", ["release_id"], name: "index_release_images_on_release_id", using: :btree
 
   create_table "releases", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name",        default: "Untiteled"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.text     "description"
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "number"
-    t.integer  "time"
+    t.string   "title",                         null: false
+    t.integer  "position",                      null: false
+    t.integer  "time",              default: 0, null: false
     t.integer  "release_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "song_file_name"
     t.string   "song_content_type"
     t.integer  "song_file_size"

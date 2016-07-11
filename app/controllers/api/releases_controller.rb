@@ -18,8 +18,7 @@ class Api::ReleasesController < ApplicationController
 					only: :image_url
 				},
 				tracks: {
-					methods: :song_url,
-					only: :song_url
+					methods: :song_url
 				}
 			})
 	end

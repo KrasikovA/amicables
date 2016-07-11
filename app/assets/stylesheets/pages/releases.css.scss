@@ -4,18 +4,18 @@
 	color: white;
 	font-size: 15px;
 	@include active-list;
-	.right-column{
+	article.right-column{
 		width: 70%;
-		float: left;
 		height: 100%;
+		float: left;
+		overflow-y: scroll;
 		h3{
 			margin-top: 0;
 			font-size: 21px;
 		}
 		[ui-view="releasesCurrent"]{
-			padding-top: $cntnt-vertical-text-padding;
-			height: 100%;
 			overflow-y: scroll;
+			padding-top: $cntnt-vertical-text-padding;
 			.left-column{
 				width: 50%;
 				float: left;
